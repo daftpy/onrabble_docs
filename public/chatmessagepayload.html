@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- chatmessagepayload.cpp -->
+  <meta name="description" content="Represents a single public chat message within the system.">
+  <title>ChatMessagePayload Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>ChatMessagePayload</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">ChatMessagePayload Class</h1>
+<!-- $$$ChatMessagePayload-brief -->
+<p>Represents a single public chat message within the system. <a href="#details">More...</a></p>
+<!-- @@@ChatMessagePayload -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;ChatMessagePayload&gt;</code></td></tr>
+</table></div>
+<ul>
+<li><a href="chatmessagepayload-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary" translate="no">
+<tr><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="chatmessagepayload.html#authoredAt-prop" translate="no">authoredAt</a></b> : QDateTime</li>
+<li class="fn" translate="no"><b><a href="chatmessagepayload.html#cacheId-prop" translate="no">cacheId</a></b> : int</li>
+<li class="fn" translate="no"><b><a href="chatmessagepayload.html#channel-prop" translate="no">channel</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="chatmessagepayload.html#id-prop" translate="no">id</a></b> : int</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="chatmessagepayload.html#message-prop" translate="no">message</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="chatmessagepayload.html#ownerId-prop" translate="no">ownerId</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="chatmessagepayload.html#username-prop" translate="no">username</a></b> : QString</li>
+</ul>
+</td></tr>
+</table></div>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#ChatMessagePayload" translate="no">ChatMessagePayload</a></b>(const QJsonObject &amp;<i>json</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QDateTime </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#authoredAt-prop" translate="no">authoredAt</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#cacheId-prop" translate="no">cacheId</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#channel-prop" translate="no">channel</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#id-prop" translate="no">id</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#message-prop" translate="no">message</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#ownerId-prop" translate="no">ownerId</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#setAuthoredAt" translate="no">setAuthoredAt</a></b>(const QDateTime &amp;<i>datetime</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#setCacheId" translate="no">setCacheId</a></b>(int <i>id</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#setChannel" translate="no">setChannel</a></b>(const QString &amp;<i>channel</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#setId" translate="no">setId</a></b>(int <i>id</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#setMessage" translate="no">setMessage</a></b>(const QString &amp;<i>message</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#setOwnerId" translate="no">setOwnerId</a></b>(const QString &amp;<i>id</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#setUsername" translate="no">setUsername</a></b>(const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="chatmessagepayload.html#username-prop" translate="no">username</a></b>() const</td></tr>
+</table></div>
+<!-- $$$ChatMessagePayload-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>ChatMessagePayload encapsulates the properties of a chat message, including sender info, channel name, message body, and timestamp. It can be initialized from a <a href="https://doc.qt.io/qt/qjsonobject.html" translate="no">QJsonObject</a> and is exposed to QML via <a href="https://doc.qt.io/qt/qobject.html#Q_GADGET" translate="no">Q_GADGET</a> and <a href="https://doc.qt.io/qt/qqmlintegration-h-qtqml-proxy.html#QML_VALUE_TYPE" translate="no">QML_VALUE_TYPE</a>.</p>
+</div>
+<!-- @@@ChatMessagePayload -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$authoredAt-prop$$$authoredAt$$$setAuthoredAtconstQDateTime& -->
+<h3 class="fn" translate="no" id="authoredAt-prop"><span class="name">authoredAt</span> : <span class="type"><a href="https://doc.qt.io/qt/qdatetime.html" translate="no">QDateTime</a></span></h3>
+<p>Returns the timestamp when the message was authored.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QDateTime </td><td class="memItemRight bottomAlign"><span class="name"><b>authoredAt</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="chatmessagepayload.html#setAuthoredAt" translate="no">setAuthoredAt</a></b></span>(const QDateTime &amp;<i>datetime</i>)</td></tr>
+</table></div>
+<!-- @@@authoredAt -->
+<!-- $$$cacheId-prop$$$cacheId$$$setCacheIdint -->
+<h3 class="fn" translate="no" id="cacheId-prop"><span class="name">cacheId</span> : <span class="type">int</span></h3>
+<p>Returns the optional client-side cache ID.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>cacheId</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="chatmessagepayload.html#setCacheId" translate="no">setCacheId</a></b></span>(int <i>id</i>)</td></tr>
+</table></div>
+<!-- @@@cacheId -->
+<!-- $$$channel-prop$$$channel$$$setChannelconstQString& -->
+<h3 class="fn" translate="no" id="channel-prop"><span class="name">channel</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the name of the channel this message was posted in.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>channel</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="chatmessagepayload.html#setChannel" translate="no">setChannel</a></b></span>(const QString &amp;<i>channel</i>)</td></tr>
+</table></div>
+<!-- @@@channel -->
+<!-- $$$id-prop$$$id$$$setIdint -->
+<h3 class="fn" translate="no" id="id-prop"><span class="name">id</span> : <span class="type">int</span></h3>
+<p>Returns the server-assigned unique ID for the message.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>id</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="chatmessagepayload.html#setId" translate="no">setId</a></b></span>(int <i>id</i>)</td></tr>
+</table></div>
+<!-- @@@id -->
+<!-- $$$message-prop$$$message$$$setMessageconstQString& -->
+<h3 class="fn" translate="no" id="message-prop"><span class="name">message</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the body text of the chat message.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>message</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="chatmessagepayload.html#setMessage" translate="no">setMessage</a></b></span>(const QString &amp;<i>message</i>)</td></tr>
+</table></div>
+<!-- @@@message -->
+<!-- $$$ownerId-prop$$$ownerId$$$setOwnerIdconstQString& -->
+<h3 class="fn" translate="no" id="ownerId-prop"><span class="name">ownerId</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the user ID of the message sender.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>ownerId</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="chatmessagepayload.html#setOwnerId" translate="no">setOwnerId</a></b></span>(const QString &amp;<i>id</i>)</td></tr>
+</table></div>
+<!-- @@@ownerId -->
+<!-- $$$username-prop$$$username$$$setUsernameconstQString& -->
+<h3 class="fn" translate="no" id="username-prop"><span class="name">username</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the sender's username name.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>username</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="chatmessagepayload.html#setUsername" translate="no">setUsername</a></b></span>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<!-- @@@username -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ChatMessagePayload[overload1]$$$ChatMessagePayloadconstQJsonObject& -->
+<h3 class="fn" translate="no" id="ChatMessagePayload"><code class="details extra" translate="no">[explicit]</code> ChatMessagePayload::<span class="name">ChatMessagePayload</span>(const <span class="type"><a href="https://doc.qt.io/qt/qjsonobject.html" translate="no">QJsonObject</a></span> &amp;<i>json</i>)</h3>
+<p>Constructs a ChatMessagePayload from a <i translate="no">json</i> object.</p>
+<!-- @@@ChatMessagePayload -->
+<!-- $$$setAuthoredAt -->
+<h3 class="fn" translate="no" id="setAuthoredAt"><span class="type">void</span> ChatMessagePayload::<span class="name">setAuthoredAt</span>(const <span class="type"><a href="https://doc.qt.io/qt/qdatetime.html" translate="no">QDateTime</a></span> &amp;<i>datetime</i>)</h3>
+<p>Sets the authored timestamp to <i translate="no">datetime</i>.</p>
+<p><i translate="no">datetime</i> is the time the message was authored</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="chatmessagepayload.html#authoredAt-prop" translate="no">authoredAt</a>. </p>
+</div><p><b>See also </b><a href="chatmessagepayload.html#authoredAt-prop" translate="no">authoredAt</a>().</p>
+<!-- @@@setAuthoredAt -->
+<!-- $$$setCacheId -->
+<h3 class="fn" translate="no" id="setCacheId"><span class="type">void</span> ChatMessagePayload::<span class="name">setCacheId</span>(<span class="type">int</span> <i>id</i>)</h3>
+<p>Sets the cache ID to <i translate="no">id</i>.</p>
+<p><i translate="no">id</i> is the message's unique cache id</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="chatmessagepayload.html#cacheId-prop" translate="no">cacheId</a>. </p>
+</div><p><b>See also </b><a href="chatmessagepayload.html#cacheId-prop" translate="no">cacheId</a>().</p>
+<!-- @@@setCacheId -->
+<!-- $$$setChannel -->
+<h3 class="fn" translate="no" id="setChannel"><span class="type">void</span> ChatMessagePayload::<span class="name">setChannel</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>channel</i>)</h3>
+<p>Sets the message's channel to <i translate="no">channel</i>.</p>
+<p><i translate="no">channel</i> is the channel's name</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="chatmessagepayload.html#channel-prop" translate="no">channel</a>. </p>
+</div><p><b>See also </b><a href="chatmessagepayload.html#channel-prop" translate="no">channel</a>().</p>
+<!-- @@@setChannel -->
+<!-- $$$setId -->
+<h3 class="fn" translate="no" id="setId"><span class="type">void</span> ChatMessagePayload::<span class="name">setId</span>(<span class="type">int</span> <i>id</i>)</h3>
+<p>Sets the unique message ID to <i translate="no">id</i>.</p>
+<p><i translate="no">id</i> is the messages unique id</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="chatmessagepayload.html#id-prop" translate="no">id</a>. </p>
+</div><p><b>See also </b><a href="chatmessagepayload.html#id-prop" translate="no">id</a>().</p>
+<!-- @@@setId -->
+<!-- $$$setMessage -->
+<h3 class="fn" translate="no" id="setMessage"><span class="type">void</span> ChatMessagePayload::<span class="name">setMessage</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>message</i>)</h3>
+<p>Sets the message body text to <i translate="no">message</i>.</p>
+<p><i translate="no">message</i> is the string of text that represents the message content</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="chatmessagepayload.html#message-prop" translate="no">message</a>. </p>
+</div><p><b>See also </b><a href="chatmessagepayload.html#message-prop" translate="no">message</a>().</p>
+<!-- @@@setMessage -->
+<!-- $$$setOwnerId -->
+<h3 class="fn" translate="no" id="setOwnerId"><span class="type">void</span> ChatMessagePayload::<span class="name">setOwnerId</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>id</i>)</h3>
+<p>Sets the sender's user ID to <i translate="no">id</i>.</p>
+<p><i translate="no">id</i> is the sender's unique user id</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="chatmessagepayload.html#ownerId-prop" translate="no">ownerId</a>. </p>
+</div><p><b>See also </b><a href="chatmessagepayload.html#ownerId-prop" translate="no">ownerId</a>().</p>
+<!-- @@@setOwnerId -->
+<!-- $$$setUsername -->
+<h3 class="fn" translate="no" id="setUsername"><span class="type">void</span> ChatMessagePayload::<span class="name">setUsername</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>name</i>)</h3>
+<p>Sets the sender's display name to <i translate="no">name</i>.</p>
+<p><i translate="no">name</i> is the senders username</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="chatmessagepayload.html#username-prop" translate="no">username</a>. </p>
+</div><p><b>See also </b><a href="chatmessagepayload.html#username-prop" translate="no">username</a>().</p>
+<!-- @@@setUsername -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

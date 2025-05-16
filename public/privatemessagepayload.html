@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- privatemessagepayload.cpp -->
+  <meta name="description" content="Represents a single private message exchanged between two users.">
+  <title>PrivateMessagePayload Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>PrivateMessagePayload</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">PrivateMessagePayload Class</h1>
+<!-- $$$PrivateMessagePayload-brief -->
+<p>Represents a single private message exchanged between two users. <a href="#details">More...</a></p>
+<!-- @@@PrivateMessagePayload -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;PrivateMessagePayload&gt;</code></td></tr>
+</table></div>
+<ul>
+<li><a href="privatemessagepayload-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary" translate="no">
+<tr><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="privatemessagepayload.html#authoredAt-prop" translate="no">authoredAt</a></b> : QDateTime</li>
+<li class="fn" translate="no"><b><a href="privatemessagepayload.html#id-prop" translate="no">id</a></b> : int</li>
+<li class="fn" translate="no"><b><a href="privatemessagepayload.html#message-prop" translate="no">message</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="privatemessagepayload.html#ownerId-prop" translate="no">ownerId</a></b> : QString</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="privatemessagepayload.html#recipient-prop" translate="no">recipient</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="privatemessagepayload.html#recipientId-prop" translate="no">recipientId</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="privatemessagepayload.html#username-prop" translate="no">username</a></b> : QString</li>
+</ul>
+</td></tr>
+</table></div>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#PrivateMessagePayload" translate="no">PrivateMessagePayload</a></b>(const QJsonObject &amp;<i>json</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QDateTime </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#authoredAt-prop" translate="no">authoredAt</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#id-prop" translate="no">id</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#message-prop" translate="no">message</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#ownerId-prop" translate="no">ownerId</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#recipient-prop" translate="no">recipient</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#recipientId-prop" translate="no">recipientId</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#setAuthoredAt" translate="no">setAuthoredAt</a></b>(const QDateTime &amp;<i>datetime</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#setId" translate="no">setId</a></b>(int <i>id</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#setMessage" translate="no">setMessage</a></b>(const QString &amp;<i>message</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#setOwnerId" translate="no">setOwnerId</a></b>(const QString &amp;<i>id</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#setRecipient" translate="no">setRecipient</a></b>(const QString &amp;<i>recipient</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#setRecipientId" translate="no">setRecipientId</a></b>(const QString &amp;<i>recipientId</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#setUsername" translate="no">setUsername</a></b>(const QString &amp;<i>username</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="privatemessagepayload.html#username-prop" translate="no">username</a></b>() const</td></tr>
+</table></div>
+<!-- $$$PrivateMessagePayload-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+</div>
+<!-- @@@PrivateMessagePayload -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$authoredAt-prop$$$authoredAt$$$setAuthoredAtconstQDateTime& -->
+<h3 class="fn" translate="no" id="authoredAt-prop"><span class="name">authoredAt</span> : <span class="type"><a href="https://doc.qt.io/qt/qdatetime.html" translate="no">QDateTime</a></span></h3>
+<p>Returns the timestamp when the message was authored.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QDateTime </td><td class="memItemRight bottomAlign"><span class="name"><b>authoredAt</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="privatemessagepayload.html#setAuthoredAt" translate="no">setAuthoredAt</a></b></span>(const QDateTime &amp;<i>datetime</i>)</td></tr>
+</table></div>
+<!-- @@@authoredAt -->
+<!-- $$$id-prop$$$id$$$setIdint -->
+<h3 class="fn" translate="no" id="id-prop"><span class="name">id</span> : <span class="type">int</span></h3>
+<p>Returns the unique message ID.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>id</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="privatemessagepayload.html#setId" translate="no">setId</a></b></span>(int <i>id</i>)</td></tr>
+</table></div>
+<!-- @@@id -->
+<!-- $$$message-prop$$$message$$$setMessageconstQString& -->
+<h3 class="fn" translate="no" id="message-prop"><span class="name">message</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the body of the private message.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>message</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="privatemessagepayload.html#setMessage" translate="no">setMessage</a></b></span>(const QString &amp;<i>message</i>)</td></tr>
+</table></div>
+<!-- @@@message -->
+<!-- $$$ownerId-prop$$$ownerId$$$setOwnerIdconstQString& -->
+<h3 class="fn" translate="no" id="ownerId-prop"><span class="name">ownerId</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the sender's user ID.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>ownerId</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="privatemessagepayload.html#setOwnerId" translate="no">setOwnerId</a></b></span>(const QString &amp;<i>id</i>)</td></tr>
+</table></div>
+<!-- @@@ownerId -->
+<!-- $$$recipient-prop$$$recipient$$$setRecipientconstQString& -->
+<h3 class="fn" translate="no" id="recipient-prop"><span class="name">recipient</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the recipient's display name.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>recipient</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="privatemessagepayload.html#setRecipient" translate="no">setRecipient</a></b></span>(const QString &amp;<i>recipient</i>)</td></tr>
+</table></div>
+<!-- @@@recipient -->
+<!-- $$$recipientId-prop$$$recipientId$$$setRecipientIdconstQString& -->
+<h3 class="fn" translate="no" id="recipientId-prop"><span class="name">recipientId</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the recipient's user ID.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>recipientId</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="privatemessagepayload.html#setRecipientId" translate="no">setRecipientId</a></b></span>(const QString &amp;<i>recipientId</i>)</td></tr>
+</table></div>
+<!-- @@@recipientId -->
+<!-- $$$username-prop$$$username$$$setUsernameconstQString& -->
+<h3 class="fn" translate="no" id="username-prop"><span class="name">username</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the sender's display name.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>username</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="privatemessagepayload.html#setUsername" translate="no">setUsername</a></b></span>(const QString &amp;<i>username</i>)</td></tr>
+</table></div>
+<!-- @@@username -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$PrivateMessagePayload[overload1]$$$PrivateMessagePayloadconstQJsonObject& -->
+<h3 class="fn" translate="no" id="PrivateMessagePayload"><code class="details extra" translate="no">[explicit]</code> PrivateMessagePayload::<span class="name">PrivateMessagePayload</span>(const <span class="type"><a href="https://doc.qt.io/qt/qjsonobject.html" translate="no">QJsonObject</a></span> &amp;<i>json</i>)</h3>
+<p>Constructs a PrivateMessagePayload from <i translate="no">json</i> object.</p>
+<!-- @@@PrivateMessagePayload -->
+<!-- $$$setAuthoredAt -->
+<h3 class="fn" translate="no" id="setAuthoredAt"><span class="type">void</span> PrivateMessagePayload::<span class="name">setAuthoredAt</span>(const <span class="type"><a href="https://doc.qt.io/qt/qdatetime.html" translate="no">QDateTime</a></span> &amp;<i>datetime</i>)</h3>
+<p>Sets the authored timestamp to <i translate="no">datetime</i>.</p>
+<p><i translate="no">datetime</i> is the time the private message was authored</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="privatemessagepayload.html#authoredAt-prop" translate="no">authoredAt</a>. </p>
+</div><p><b>See also </b><a href="privatemessagepayload.html#authoredAt-prop" translate="no">authoredAt</a>().</p>
+<!-- @@@setAuthoredAt -->
+<!-- $$$setId -->
+<h3 class="fn" translate="no" id="setId"><span class="type">void</span> PrivateMessagePayload::<span class="name">setId</span>(<span class="type">int</span> <i>id</i>)</h3>
+<p>Sets the message ID to <i translate="no">id</i>.</p>
+<p><i translate="no">id</i> is a unique message ID</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="privatemessagepayload.html#id-prop" translate="no">id</a>. </p>
+</div><p><b>See also </b><a href="privatemessagepayload.html#id-prop" translate="no">id</a>().</p>
+<!-- @@@setId -->
+<!-- $$$setMessage -->
+<h3 class="fn" translate="no" id="setMessage"><span class="type">void</span> PrivateMessagePayload::<span class="name">setMessage</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>message</i>)</h3>
+<p>Sets the message body to <i translate="no">message</i>.</p>
+<p><i translate="no">message</i> is the text content of the private message</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="privatemessagepayload.html#message-prop" translate="no">message</a>. </p>
+</div><p><b>See also </b><a href="privatemessagepayload.html#message-prop" translate="no">message</a>().</p>
+<!-- @@@setMessage -->
+<!-- $$$setOwnerId -->
+<h3 class="fn" translate="no" id="setOwnerId"><span class="type">void</span> PrivateMessagePayload::<span class="name">setOwnerId</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>id</i>)</h3>
+<p>Sets the sender's user ID to <i translate="no">id</i>.</p>
+<p>The <i translate="no">id</i> is the senders unique user ID</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="privatemessagepayload.html#ownerId-prop" translate="no">ownerId</a>. </p>
+</div><p><b>See also </b><a href="privatemessagepayload.html#ownerId-prop" translate="no">ownerId</a>().</p>
+<!-- @@@setOwnerId -->
+<!-- $$$setRecipient -->
+<h3 class="fn" translate="no" id="setRecipient"><span class="type">void</span> PrivateMessagePayload::<span class="name">setRecipient</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>recipient</i>)</h3>
+<p>Sets the recipient's display name to <i translate="no">recipient</i>.</p>
+<p><i translate="no">recipient</i> is the recipient's username</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="privatemessagepayload.html#recipient-prop" translate="no">recipient</a>. </p>
+</div><p><b>See also </b><a href="privatemessagepayload.html#recipient-prop" translate="no">recipient</a>().</p>
+<!-- @@@setRecipient -->
+<!-- $$$setRecipientId -->
+<h3 class="fn" translate="no" id="setRecipientId"><span class="type">void</span> PrivateMessagePayload::<span class="name">setRecipientId</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>recipientId</i>)</h3>
+<p>Sets the recipient's user ID to <i translate="no">recipientId</i>.</p>
+<p><i translate="no">recipientId</i> is the recipients unique user ID</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="privatemessagepayload.html#recipientId-prop" translate="no">recipientId</a>. </p>
+</div><p><b>See also </b><a href="privatemessagepayload.html#recipientId-prop" translate="no">recipientId</a>().</p>
+<!-- @@@setRecipientId -->
+<!-- $$$setUsername -->
+<h3 class="fn" translate="no" id="setUsername"><span class="type">void</span> PrivateMessagePayload::<span class="name">setUsername</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>username</i>)</h3>
+<p>Sets the sender's display name to <i translate="no">username</i>.</p>
+<p><i translate="no">username</i> is the sender's username</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="privatemessagepayload.html#username-prop" translate="no">username</a>. </p>
+</div><p><b>See also </b><a href="privatemessagepayload.html#username-prop" translate="no">username</a>().</p>
+<!-- @@@setUsername -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

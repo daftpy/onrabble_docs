@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- userstatuspayload.cpp -->
+  <meta name="description" content="Represents the online status of a single user.">
+  <title>UserStatusPayload Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>UserStatusPayload</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">UserStatusPayload Class</h1>
+<!-- $$$UserStatusPayload-brief -->
+<p>Represents the online status of a single user. <a href="#details">More...</a></p>
+<!-- @@@UserStatusPayload -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;UserStatusPayload&gt;</code></td></tr>
+</table></div>
+<ul>
+<li><a href="userstatuspayload-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn" translate="no"><b><a href="userstatuspayload.html#id-prop" translate="no">id</a></b> : const QString</li>
+<li class="fn" translate="no"><b><a href="userstatuspayload.html#isConnected-prop" translate="no">isConnected</a></b> : const bool</li>
+<li class="fn" translate="no"><b><a href="userstatuspayload.html#username-prop" translate="no">username</a></b> : const QString</li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="userstatuspayload.html#UserStatusPayload" translate="no">UserStatusPayload</a></b>(const QJsonObject &amp;<i>json</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="userstatuspayload.html#id-prop" translate="no">id</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="userstatuspayload.html#isConnected-prop" translate="no">isConnected</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="userstatuspayload.html#username-prop" translate="no">username</a></b>() const</td></tr>
+</table></div>
+<!-- $$$UserStatusPayload-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>This payload is typically included in &quot;connected_users&quot; or &quot;user_status&quot; messages sent by the server.</p>
+</div>
+<!-- @@@UserStatusPayload -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$id-prop$$$id -->
+<h3 class="fn" translate="no" id="id-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">id</span> : const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the unique identifier of the user.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>id</b></span>() const</td></tr>
+</table></div>
+<!-- @@@id -->
+<!-- $$$isConnected-prop$$$isConnected -->
+<h3 class="fn" translate="no" id="isConnected-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">isConnected</span> : const <span class="type">bool</span></h3>
+<p>Returns <code translate="no">true</code> if the user is currently online.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isConnected</b></span>() const</td></tr>
+</table></div>
+<!-- @@@isConnected -->
+<!-- $$$username-prop$$$username -->
+<h3 class="fn" translate="no" id="username-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">username</span> : const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the user's username.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>username</b></span>() const</td></tr>
+</table></div>
+<!-- @@@username -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$UserStatusPayload[overload1]$$$UserStatusPayloadconstQJsonObject& -->
+<h3 class="fn" translate="no" id="UserStatusPayload"><code class="details extra" translate="no">[explicit]</code> UserStatusPayload::<span class="name">UserStatusPayload</span>(const <span class="type"><a href="https://doc.qt.io/qt/qjsonobject.html" translate="no">QJsonObject</a></span> &amp;<i>json</i>)</h3>
+<p>Constructs a UserStatusPayload from a <i translate="no">json</i> object.</p>
+<p>Extracts the <code translate="no">id</code>, <code translate="no">username</code>, and <code translate="no">status</code> fields from the JSON structure.</p>
+<!-- @@@UserStatusPayload -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

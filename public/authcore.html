@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- authcore.cpp -->
+  <meta name="description" content="Handles the low-level OAuth2 logic for user authentication.">
+  <title>AuthCore Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>AuthCore</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#internal-members">Internal Members</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">AuthCore Class</h1>
+<!-- $$$AuthCore-brief -->
+<p>Handles the low-level OAuth2 logic for user authentication. <a href="#details">More...</a></p>
+<!-- @@@AuthCore -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;AuthCore&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a></td></tr>
+</table></div>
+<ul>
+<li><a href="authcore-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="authcore.html#AuthCore" translate="no">AuthCore</a></b>(QObject *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="authcore.html#cancelAuthenticationFlow" translate="no">cancelAuthenticationFlow</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="authcore.html#checkHealth" translate="no">checkHealth</a></b>(const QUrl &amp;<i>url</i>, AuthCore::HealthCheckCallback <i>callback</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="authcore.html#startAuthenticationFlow" translate="no">startAuthenticationFlow</a></b>(const DiscoveryPayload &amp;<i>payload</i>, AuthCore::AuthenticationCallback <i>callback</i>)</td></tr>
+</table></div>
+<!-- $$$AuthCore-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>AuthCore wraps the Qt OAuth2 framework to drive user authentication via the OAuth2 authorization code flow. It handles URL redirection, token acquisition, and error propagation. It is intended to be used internally by a higher-level authentication manager.</p>
+<h3 id="internal-members">Internal Members</h3>
+<p>The following private members and slots are internal mechanisms used by AuthCore and not exposed to higher-level components:</p>
+<p><b>Private</b> <b>Variables</b></p>
+<ul>
+<li><code translate="no">m_authFlow (<a href="https://doc.qt.io/qt/qoauth2authorizationcodeflow.html" translate="no">QOAuth2AuthorizationCodeFlow</a>)</code> &ndash; Manages the OAuth2 grant flow and token state.</li>
+<li><code translate="no">m_replyHandler (<a href="https://doc.qt.io/qt/qoauthhttpserverreplyhandler.html" translate="no">QOAuthHttpServerReplyHandler</a>)</code> &ndash; Listens on localhost for redirect responses.</li>
+<li><code translate="no">m_callback (AuthenticationCallback)</code> &ndash; Function to invoke when authentication completes or fails.</li>
+<li><code translate="no">m_networkManager (<a href="https://doc.qt.io/qt/qnetworkaccessmanager.html" translate="no">QNetworkAccessManager</a>)</code> &ndash; Used to perform a simple health check before authentication begins.</li>
+</ul>
+<p><b>Internal</b> <b>Slots</b></p>
+<ul>
+<li><code translate="no">onAuthenticationUrlRequested()</code> &ndash; Emits a signal to show the login page in a browser.</li>
+<li><code translate="no">onGranted()</code> &ndash; Called when an access token is received successfully.</li>
+<li><code translate="no">onErrorOccurred()</code> &ndash; Called when OAuth2 encounters an error.</li>
+</ul>
+</div>
+<!-- @@@AuthCore -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$AuthCore[overload1]$$$AuthCoreQObject* -->
+<h3 class="fn" translate="no" id="AuthCore"><code class="details extra" translate="no">[explicit]</code> AuthCore::<span class="name">AuthCore</span>(<span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs the AuthCore instance.</p>
+<p><i translate="no">parent</i> is the optional parent object.</p>
+<!-- @@@AuthCore -->
+<!-- $$$cancelAuthenticationFlow[overload1]$$$cancelAuthenticationFlow -->
+<h3 class="fn" translate="no" id="cancelAuthenticationFlow"><span class="type">void</span> AuthCore::<span class="name">cancelAuthenticationFlow</span>()</h3>
+<p>Cancels any in-progress authentication attempt and resets internal state.</p>
+<!-- @@@cancelAuthenticationFlow -->
+<!-- $$$checkHealth[overload1]$$$checkHealthconstQUrl&AuthCore::HealthCheckCallback -->
+<h3 class="fn" translate="no" id="checkHealth"><span class="type">void</span> AuthCore::<span class="name">checkHealth</span>(const <span class="type"><a href="https://doc.qt.io/qt/qurl.html" translate="no">QUrl</a></span> &amp;<i>url</i>, <span class="type">AuthCore::HealthCheckCallback</span> <i>callback</i>)</h3>
+<p>Pings the given <i translate="no">url</i> and calls <i translate="no">callback</i> with the result.</p>
+<p>Used to ensure the authentication server is reachable before launching the login flow.</p>
+<!-- @@@checkHealth -->
+<!-- $$$startAuthenticationFlow[overload1]$$$startAuthenticationFlowconstDiscoveryPayload&AuthCore::AuthenticationCallback -->
+<h3 class="fn" translate="no" id="startAuthenticationFlow"><span class="type">void</span> AuthCore::<span class="name">startAuthenticationFlow</span>(const <span class="type"><a href="discoverypayload.html" translate="no">DiscoveryPayload</a></span> &amp;<i>payload</i>, <span class="type">AuthCore::AuthenticationCallback</span> <i>callback</i>)</h3>
+<p>Starts the OAuth2 authentication code flow using the provided <i translate="no">payload</i> and <i translate="no">callback</i>.</p>
+<p>This configures OAuth URLs, sets up a localhost reply handler, and begins the login process.</p>
+<!-- @@@startAuthenticationFlow -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

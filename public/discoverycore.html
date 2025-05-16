@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- discoverycore.cpp -->
+  <meta name="description" content="Performs low-level HTTP discovery and JSON parsing.">
+  <title>DiscoveryCore Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>DiscoveryCore</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#internal-members">Internal Members</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">DiscoveryCore Class</h1>
+<!-- $$$DiscoveryCore-brief -->
+<p>Performs low-level HTTP discovery and JSON parsing. <a href="#details">More...</a></p>
+<!-- @@@DiscoveryCore -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;DiscoveryCore&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a></td></tr>
+</table></div>
+<ul>
+<li><a href="discoverycore-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="discoverycore.html#DiscoveryCore" translate="no">DiscoveryCore</a></b>(QObject *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="discoverycore.html#fetchServerMeta" translate="no">fetchServerMeta</a></b>(const QUrl &amp;<i>url</i>)</td></tr>
+</table></div>
+<!-- $$$DiscoveryCore-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>DiscoveryCore is responsible for making an HTTP GET request to a chat server's discovery endpoint, parsing the JSON response into a <a href="discoverypayload.html" translate="no">DiscoveryPayload</a>, and emitting the result via signals. Only one request is active at any time; repeated calls cancel the previous one.</p>
+<div class="internal"><h4 id="internal-members">Internal Members</h4>
+<p>These members are maintained internally by <code translate="no">DiscoveryCore</code> and are not intended for external use. They are documented here for developer clarity.</p>
+<p><b>Private</b> <b>Variables</b></p>
+<ul>
+<li><code translate="no">m_accessManager (<a href="https://doc.qt.io/qt/qnetworkaccessmanager.html" translate="no">QNetworkAccessManager</a>)</code> &ndash; Handles asynchronous HTTP requests for discovery.</li>
+<li><code translate="no">m_currentReply (QNetworkReply*)</code> &ndash; Tracks the active network request so it can be canceled or cleared.</li>
+</ul>
+<p><b>Internal</b> <b>Functions</b></p>
+<ul>
+<li><code translate="no">handleReply()</code> &ndash; Processes the HTTP response and emits either a success or error signal.</li>
+<li><code translate="no">clearCurrentReply()</code> &ndash; Resets and cleans up the current network reply.</li>
+</ul>
+</div></div>
+<p><b>See also </b><a href="discoverypayload.html" translate="no">DiscoveryPayload</a> and <a href="qml-discoverypage.html" translate="no">DiscoveryPage</a>.</p>
+<!-- @@@DiscoveryCore -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$DiscoveryCore[overload1]$$$DiscoveryCoreQObject* -->
+<h3 class="fn" translate="no" id="DiscoveryCore"><code class="details extra" translate="no">[explicit]</code> DiscoveryCore::<span class="name">DiscoveryCore</span>(<span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs the DiscoveryCore.</p>
+<p><i translate="no">parent</i> is the optional parent object for ownership and signal propagation.</p>
+<!-- @@@DiscoveryCore -->
+<!-- $$$fetchServerMeta[overload1]$$$fetchServerMetaconstQUrl& -->
+<h3 class="fn" translate="no" id="fetchServerMeta"><span class="type">void</span> DiscoveryCore::<span class="name">fetchServerMeta</span>(const <span class="type"><a href="https://doc.qt.io/qt/qurl.html" translate="no">QUrl</a></span> &amp;<i>url</i>)</h3>
+<p>Initiates a discovery request to the given <i translate="no">url</i>.</p>
+<p>Cancels any previous request in progress. Emits success with a parsed <a href="discoverypayload.html" translate="no">DiscoveryPayload</a> on success or error with a descriptive message on failure.</p>
+<p><b>See also </b><a href="discoverypayload.html" translate="no">DiscoveryPayload</a>.</p>
+<!-- @@@fetchServerMeta -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

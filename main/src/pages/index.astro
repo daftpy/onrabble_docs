@@ -1,0 +1,123 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import gitFork from '../assets/git-fork.svg';
+import desktopTower from '../assets/desktop-tower.svg';
+import lockKey from '../assets/lock-key.svg';
+import rocketLaunch from '../assets/rocket-launch.svg';
+import downloadSimple from '../assets/download-simple.svg';
+import onrabbleClient from '../assets/onrabbleclient.png';
+---
+
+<MainLayout>
+	<div class="container">
+    <main>
+      <section id="Hero">
+        <h1>
+          A secure, real time chat platform built from the ground up. Open source. Fully integrated. Built with  <span>Go</span>,  
+          <span>C++</span>, and <span>QML</span>
+        </h1>
+      </section>
+      <div class="screenshot">
+        <img src={onrabbleClient.src} alt="Qt client preview" style="" />
+      </div>
+      <div class="buttons">
+        <a class="button" href={`https://${import.meta.env.PUBLIC_HOST}/launch`}>
+          <img src={rocketLaunch.src} alt="rocket-launch icon" width="20"/>
+          Launch Guide
+        </a>
+        <a class="button" href="#">
+          <img src={downloadSimple.src} alt="download-simple icon" width="20"/>
+          Download Client</a>
+      </div>
+      <section id="Promo">
+        <h3 class="header">Secure & Fast Messaging <img src={lockKey.src} alt="Lock-Key icon" width="22" height="22" /></h3>
+        <p>
+          OnRabble is a secure, real-time chat platform built from the ground up to provide full control over your communication stack. It consists of a 
+          Go-based server and a native Qt/QML desktop client, connected through WebSockets for instant messaging.
+        </p>
+        <p>
+          The server handles authentication through Keycloak (OAuth2), stores chat history in PostgreSQL, and caches active sessions with Valkey.
+        </p>
+  
+        <h3 class="header">Self Hosted <img src={desktopTower.src} alt="Desktop tower icon" width="22" height="22" /></h3>
+        <p>
+          Fully containerized with Docker Compose, OnRabble gives you the freedom to self-host your chats, keeping your data private, secure, and fully under your control. Authentication, message storage, and caching all happen on your own infrastructure, ensuring your conversations never leave your environment.
+        </p>
+  
+        <h3 class="header">Open Source <img src={gitFork.src} alt="Git Fork logo" width="22" height="22" /></h3>
+        <p>OnRabble is open source and developer-friendly, ready for private hosting, customization, and extension. Whether you want to deploy it as-is or build new features on top, the full stack is yours to adapt.</p>	  
+      </section>
+
+      <section id="Learn">
+        <h2>Learn More</h2>
+			  <p>The server and client exist as seperate projects. You can read to learn more about each below.</p>
+			  <div>
+          <!-- <img src={computerTower.src} alt="Git Fork Logo" width="28" height="28" /> -->
+          <a href="/server">OnRabble Server</a>
+
+
+          <!-- <img src={appWindow.src} alt="Git Fork Logo" width="28" height="28" /> -->
+          <a href="/client">OnRabble Client</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</MainLayout>
+
+<script>
+  console.log(import.meta.env.PUBLIC_HOST);
+</script>
+
+<style>
+  main {
+    text-align: center;
+  }
+  #Hero {
+    background: linear-gradient(to bottom, rgba(21, 29, 43, 0.5) 0%, rgba(12, 14, 17, 0) 100%);
+
+    max-width: 768px;
+
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    font-size: 16px;
+
+    line-height: 1.2;
+
+    margin: 0 auto;
+    margin-top: 3.5em;
+    padding: 2.5em 1em 3em 1em;
+  }
+  #Hero > div {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+
+    padding-top: 2em;
+  }
+  #Hero > h1 {
+		margin: 0;
+    font-weight: 600;
+  }
+  #Promo > h3 {
+    padding-top: 3.5em;
+  }
+  #Learn {
+    font-size: 16px;
+    font-family: "Source Sans 3", sans-serif;
+
+    padding-top: 3em;
+  }
+  #Learn > div  {
+    display: flex;
+    justify-content: center;
+    gap: 2.5em;
+
+    padding-top: 1em;
+  }
+  .screenshot {
+    max-width: 668px;
+
+    margin: 0 auto;
+  }
+</style>

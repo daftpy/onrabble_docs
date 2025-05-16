@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- channelpayload.cpp -->
+  <meta name="description" content="Represents the metadata for a public chat channel.">
+  <title>ChannelPayload Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>ChannelPayload</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">ChannelPayload Class</h1>
+<!-- $$$ChannelPayload-brief -->
+<p>Represents the metadata for a public chat channel. <a href="#details">More...</a></p>
+<!-- @@@ChannelPayload -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;ChannelPayload&gt;</code></td></tr>
+</table></div>
+<ul>
+<li><a href="channelpayload-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn" translate="no"><b><a href="channelpayload.html#description-prop" translate="no">description</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="channelpayload.html#id-prop" translate="no">id</a></b> : int</li>
+<li class="fn" translate="no"><b><a href="channelpayload.html#name-prop" translate="no">name</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="channelpayload.html#sortOrder-prop" translate="no">sortOrder</a></b> : int</li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#ChannelPayload" translate="no">ChannelPayload</a></b>(const QJsonObject &amp;<i>json</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#description-prop" translate="no">description</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#id-prop" translate="no">id</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#name-prop" translate="no">name</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#setDescription" translate="no">setDescription</a></b>(const QString &amp;<i>description</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#setId" translate="no">setId</a></b>(int <i>id</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#setName" translate="no">setName</a></b>(const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#setSortOrder" translate="no">setSortOrder</a></b>(int <i>order</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#sortOrder-prop" translate="no">sortOrder</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#operator-lt" translate="no">operator&lt;</a></b>(const ChannelPayload &amp;<i>other</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="channelpayload.html#operator-eq-eq" translate="no">operator==</a></b>(const ChannelPayload &amp;<i>other</i>) const</td></tr>
+</table></div>
+<!-- $$$ChannelPayload-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>ChannelPayload is a simple value type used to represent individual public channels. It provides identifiers, descriptions, and sorting metadata. Instances can be constructed from JSON objects and are used to populate channel-related models.</p>
+</div>
+<p><b>See also </b><a href="channelmodel.html" translate="no">ChannelModel</a>.</p>
+<!-- @@@ChannelPayload -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$description-prop$$$description$$$setDescriptionconstQString& -->
+<h3 class="fn" translate="no" id="description-prop"><span class="name">description</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the description of the channel.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>description</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="channelpayload.html#setDescription" translate="no">setDescription</a></b></span>(const QString &amp;<i>description</i>)</td></tr>
+</table></div>
+<!-- @@@description -->
+<!-- $$$id-prop$$$id$$$setIdint -->
+<h3 class="fn" translate="no" id="id-prop"><span class="name">id</span> : <span class="type">int</span></h3>
+<p>Returns the channel ID.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>id</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="channelpayload.html#setId" translate="no">setId</a></b></span>(int <i>id</i>)</td></tr>
+</table></div>
+<!-- @@@id -->
+<!-- $$$name-prop$$$name$$$setNameconstQString& -->
+<h3 class="fn" translate="no" id="name-prop"><span class="name">name</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the name of the channel.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>name</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="channelpayload.html#setName" translate="no">setName</a></b></span>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<!-- @@@name -->
+<!-- $$$sortOrder-prop$$$sortOrder$$$setSortOrderint -->
+<h3 class="fn" translate="no" id="sortOrder-prop"><span class="name">sortOrder</span> : <span class="type">int</span></h3>
+<p>Returns the sort order used to organize channels.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>sortOrder</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="channelpayload.html#setSortOrder" translate="no">setSortOrder</a></b></span>(int <i>order</i>)</td></tr>
+</table></div>
+<!-- @@@sortOrder -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ChannelPayload[overload1]$$$ChannelPayloadconstQJsonObject& -->
+<h3 class="fn" translate="no" id="ChannelPayload"><code class="details extra" translate="no">[explicit]</code> ChannelPayload::<span class="name">ChannelPayload</span>(const <span class="type"><a href="https://doc.qt.io/qt/qjsonobject.html" translate="no">QJsonObject</a></span> &amp;<i>json</i>)</h3>
+<p>Constructs a ChannelPayload by parsing a <i translate="no">json</i> object.</p>
+<p>Extracts values for <code translate="no">id</code>, <code translate="no">name</code>, <code translate="no">description</code>, and <code translate="no">sort_order</code> if present.</p>
+<!-- @@@ChannelPayload -->
+<!-- $$$setDescription -->
+<h3 class="fn" translate="no" id="setDescription"><span class="type">void</span> ChannelPayload::<span class="name">setDescription</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>description</i>)</h3>
+<p>Sets the channel description to <i translate="no">description</i>.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="channelpayload.html#description-prop" translate="no">description</a>. </p>
+</div><p><b>See also </b><a href="channelpayload.html#description-prop" translate="no">description</a>().</p>
+<!-- @@@setDescription -->
+<!-- $$$setId -->
+<h3 class="fn" translate="no" id="setId"><span class="type">void</span> ChannelPayload::<span class="name">setId</span>(<span class="type">int</span> <i>id</i>)</h3>
+<p>Sets the channel ID to <i translate="no">id</i>.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="channelpayload.html#id-prop" translate="no">id</a>. </p>
+</div><p><b>See also </b><a href="channelpayload.html#id-prop" translate="no">id</a>().</p>
+<!-- @@@setId -->
+<!-- $$$setName -->
+<h3 class="fn" translate="no" id="setName"><span class="type">void</span> ChannelPayload::<span class="name">setName</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>name</i>)</h3>
+<p>Sets the name of the channel to <i translate="no">name</i>.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="channelpayload.html#name-prop" translate="no">name</a>. </p>
+</div><p><b>See also </b><a href="channelpayload.html#name-prop" translate="no">name</a>().</p>
+<!-- @@@setName -->
+<!-- $$$setSortOrder -->
+<h3 class="fn" translate="no" id="setSortOrder"><span class="type">void</span> ChannelPayload::<span class="name">setSortOrder</span>(<span class="type">int</span> <i>order</i>)</h3>
+<p>Sets the channel's sort order to <i translate="no">order</i>.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="channelpayload.html#sortOrder-prop" translate="no">sortOrder</a>. </p>
+</div><p><b>See also </b><a href="channelpayload.html#sortOrder-prop" translate="no">sortOrder</a>().</p>
+<!-- @@@setSortOrder -->
+<!-- $$$operator<[overload1]$$$operator<constChannelPayload& -->
+<h3 class="fn" translate="no" id="operator-lt"><span class="type">bool</span> ChannelPayload::<span class="name">operator&lt;</span>(const <span class="type"><a href="channelpayload.html#ChannelPayload" translate="no">ChannelPayload</a></span> &amp;<i>other</i>) const</h3>
+<p>Returns true if this channel should be ordered before <i translate="no">other</i> based on sort order.</p>
+<!-- @@@operator< -->
+<!-- $$$operator==[overload1]$$$operator==constChannelPayload& -->
+<h3 class="fn" translate="no" id="operator-eq-eq"><span class="type">bool</span> ChannelPayload::<span class="name">operator==</span>(const <span class="type"><a href="channelpayload.html#ChannelPayload" translate="no">ChannelPayload</a></span> &amp;<i>other</i>) const</h3>
+<p>Returns true if this payload represents the same channel as <i translate="no">other</i>.</p>
+<!-- @@@operator== -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

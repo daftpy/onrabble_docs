@@ -1,0 +1,309 @@
+---
+import background from '../assets/background.png';
+import graphPaper from '../assets/graph-paper.svg';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+    <!-- Google font and Github headers -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+		<meta name="go-import" content="onrabble.com/chatserver git https://github.com/daftpy/chatserver" />
+		<meta name="go-source" content="onrabble.com/chatserver https://github.com/daftpy/chatserver https://github.com/daftpy/chatserver/tree/main{/dir} https://github.com/daftpy/chatserver/blob/main{/dir}/{file}#L{line}" />
+
+    <title>OnRabble</title>
+  </head>
+
+  <body style={`--graphPaper: url(${graphPaper.src}); --background: url(${background.src});`}>
+    <!-- Root #Container -->
+    <div id="Container">
+
+      <!-- Root #Navbar -->
+      <div id="Navbar">
+        <!-- #Brand and nav toggle -->
+        <div id="Branding">
+          <a href={`https://${import.meta.env.PUBLIC_HOST}`}><span class="brand">OnRabble</span></a>
+          <div class="menu-button">=</div>
+        </div>
+        <!-- #Nav links -->
+        <nav id="Nav" class="collapsed">
+          <span class="nav-heading">Projects</span>
+          <a class="nav-link" href={`https://${import.meta.env.PUBLIC_HOST}/server`}>Server</a>
+          <a class="nav-link" href={`https://${import.meta.env.PUBLIC_HOST}/client`}>Client</a>
+          <span class="nav-heading">Guides</span>
+          <a class="nav-link" href={`https://${import.meta.env.PUBLIC_HOST}/launch`}>Launch</a>
+          <a class="nav-link" href={`https://docs.${import.meta.env.PUBLIC_HOST}/client/`}>Client Docs</a>
+          <a class="nav-link" href={`https://pkg.${import.meta.env.PUBLIC_HOST}/onrabble.com/chatserver`}>Server Docs</a>
+          <span class="nav-heading">Contact</span>
+          <a class="nav-link" href="https://github.com/daftpy">Github</a>
+        </nav>
+      </div>
+      <!-- End of #Navbar -->
+
+      <!-- Slot where content is rendered -->
+      <div class="slot">
+        <slot />
+      </div>
+
+    </div>
+  </body>
+</html>
+
+<script>
+  var collapsed = true;
+  const menuButton = document.querySelector('.menu-button');
+  const nav = document.getElementById('Nav');
+
+  menuButton?.addEventListener('click', () => {
+    nav?.classList.toggle('collapsed');
+    collapsed = !collapsed;
+  });
+
+  // Make sure nav is always shown when resizing to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      nav?.classList.remove('collapsed');
+      collapsed = true;
+    } else {
+      !collapsed ? nav?.classList.remove('collapsed') : nav?.classList.add('collapsed');
+    }
+  });
+
+  // Set initial state based on window size
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth >= 768) {
+      nav?.classList.remove('collapsed');
+      collapsed = false;
+    } else {
+      nav?.classList.add('collapsed');
+      collapsed = true;
+    }
+  });
+</script>
+
+<style is:global>
+  /* Default html and body styling */
+  hmlt, body {
+    background-color: #0C0E11;
+    background-image: var(--graphPaper);
+    background-repeat: repeat;
+
+    color: #dde1f9;
+    font-family: "Lora", sans-serif;
+    font-size: 14px;
+
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Default element/tag styling */
+  a {
+    font-family: "Source Sans 3", sans-serif;
+    color: #4197ff;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #b0b8de;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Sans 3", sans-serif;
+  }
+  main > p, section > p {
+    line-height: 1.5;
+  }
+  main {
+    text-align: center;
+  }
+  span {
+    font-family: "Lora", serif;
+    font-weight: normal;
+    background: linear-gradient(14deg, #8b33d8 0%, #4197ff 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+  }
+
+  /* ID element styling */
+  #Container {
+    display: flex;
+    flex-direction: column;
+
+    background: var(--background);
+    background-size: 300% 100%;
+
+    min-height: 100vh;
+    height: 100%;
+  }
+  #Navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: linear-gradient(83.21deg, #151624 0%, #131521 100%);
+
+    padding: 0 1.5em;
+  }
+  #Navbar > * span {
+    background: initial;
+		-webkit-background-clip: initial;
+		-webkit-text-fill-color: initial;
+		background-clip: initial;
+  }
+  code > * span {
+    background: initial;
+		-webkit-background-clip: initial;
+		-webkit-text-fill-color: initial;
+		background-clip: initial;
+  }
+  #Branding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.5em 0;
+  }
+  #Nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+
+    padding-bottom: 1.5em;
+  }
+  #Nav.collapsed {
+    display: none;
+    padding-bottom: 0;
+  }
+  #Nav > a {
+    font-family: "Lora", sans-serif;
+    color: #a3a9c9;
+    text-decoration: none;
+  }
+  #Nav > a:hover {
+    color: #b0b8de;
+  }
+
+  /* Class styling */
+  .container {
+    max-width: 964px;
+
+    margin: 0 auto;
+    padding: 0 1.5em;
+  }
+  .container > * a {
+    font-size: 1.25em;
+  }
+  .brand {
+    font-size: 2em;
+    color: #eeeeee;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: bold;
+  }
+  .menu-button {
+    background: #303a40;
+    border-radius: 6px;
+
+    padding: 0.25em 0.5em;
+  }
+  .menu-button:hover {
+    cursor: pointer;
+    background: #1b263d;
+  }
+  .nav-heading {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 1.25em;
+
+    padding-top: 0.5em;
+    margin-top: 0.5em;
+    border-top: 1px solid #303a40;
+  }
+  #Nav > .nav-heading:first-of-type {
+    margin-top: 0;
+  }
+  .nav-link {
+    padding: 0.35em 0.35em;
+  }
+  .nav-link:hover {
+    background: #1b263d;
+  }
+  .slot {
+    flex-grow: 1;
+
+    padding: 0 1.5em 2.5em 1.5em;
+  }
+  .tagline {
+    line-height: 1.2;
+    font-weight: lighter;
+  }
+  a.button {
+		color: white;
+		background: linear-gradient(83.21deg, #1f2b93 0%, #5034b5 100%);
+		box-shadow:
+			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
+		border-radius: 10px;
+		transition: color 0.3s;
+		text-align: center;
+		display: flex;
+		gap: 0.5em;
+    max-width: fit-content;
+		justify-content: center;
+    padding: 10px 16px;
+    font-size: 1em;
+	}
+
+	a.button:hover {
+		color: rgb(220, 220, 220);
+		box-shadow: none;
+	}
+  .buttons {
+		display: flex;
+		flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+		gap: 2em;
+	}
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    color: #eeeeee;
+  }
+  .screenshot {
+    padding: 1.5em 0;
+  }
+  .screenshot img {
+    box-shadow:
+      0 0 20px rgba(118, 99, 255, 0.2),
+      0 0 40px rgba(118, 99, 255, 0.1);
+    border-radius: 8px;
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 2em;
+  }
+  
+  /* Media queries */
+  @media (min-width: 768px) {
+    /* ID element styling */
+    #Container {
+      flex-direction: row;
+    }
+    #Navbar {
+      justify-content: start;
+    }
+
+    /* Class styling */
+    #Branding > .menu-button {
+      display: none;
+    }
+  }
+</style>

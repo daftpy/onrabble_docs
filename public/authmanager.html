@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- authmanager.cpp -->
+  <meta name="description" content="Manages user authentication and access token retrieval.">
+  <title>AuthManager Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>AuthManager</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#internal-members">Internal Members</a></li>
+<li class="level3"><a href="#internal-members-internal-members-1">Internal Members</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">AuthManager Class</h1>
+<!-- $$$AuthManager-brief -->
+<p>Manages user authentication and access token retrieval. <a href="#details">More...</a></p>
+<!-- @@@AuthManager -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;AuthManager&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a></td></tr>
+</table></div>
+<ul>
+<li><a href="authmanager-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="authmanager.html#authenticationError" translate="no">authenticationError</a></b>(const QString &amp;<i>error</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="authmanager.html#authenticationSuccess" translate="no">authenticationSuccess</a></b>(const DiscoveryPayload &amp;<i>payload</i>, const QString &amp;<i>authToken</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="authmanager.html#authenticationUrlReady" translate="no">authenticationUrlReady</a></b>(const QUrl &amp;<i>url</i>)</td></tr>
+</table></div>
+<!-- $$$AuthManager-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>AuthenticationManager orchestrates the authentication workflow using a <a href="discoverypayload.html" translate="no">DiscoveryPayload</a> and <a href="authcore.html" translate="no">AuthCore</a>. It emits signals to notify QML or C++ components of key events during the authentication process, such as success, failure, or when the authentication URL is ready for display.</p>
+<h3 id="internal-members">Internal Members</h3>
+<div class="internal"><h4 id="internal-members-internal-members-1">Internal Members</h4>
+<p>The following private member variables are used internally by AuthManager and are referenced here for developer clarity. Full documentation is available in the source file:</p>
+<p><b>Private</b> <b>Variables</b></p>
+<ul>
+<li><code translate="no">m_authCore (<a href="authcore.html" translate="no">AuthCore</a>)</code> - Manages the low-level OAuth2 authentication code flow logic.</li>
+<li><code translate="no">m_authToken (<a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a>)</code> &ndash; Stores the current token retrieved during the authentication flow.</li>
+</ul>
+</div></div>
+<p><b>See also </b><a href="authcore.html" translate="no">AuthCore</a> and <a href="qml-authbrowserpage.html" translate="no">AuthBrowserPage</a>.</p>
+<!-- @@@AuthManager -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$authenticationError[overload1]$$$authenticationErrorconstQString& -->
+<h3 class="fn" translate="no" id="authenticationError"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> AuthManager::<span class="name">authenticationError</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>error</i>)</h3>
+<p>Emitted when an error occurs during the authentication process.</p>
+<p><i translate="no">error</i> contains a human-readable explanation of the failure.</p>
+<!-- @@@authenticationError -->
+<!-- $$$authenticationSuccess[overload1]$$$authenticationSuccessconstDiscoveryPayload&constQString& -->
+<h3 class="fn" translate="no" id="authenticationSuccess"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> AuthManager::<span class="name">authenticationSuccess</span>(const <span class="type"><a href="discoverypayload.html" translate="no">DiscoveryPayload</a></span> &amp;<i>payload</i>, const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>authToken</i>)</h3>
+<p>Emitted when authentication completes successfully.</p>
+<p><i translate="no">payload</i> is the discovery data used in the authentication. <i translate="no">authToken</i> is the token used to access chat services.</p>
+<!-- @@@authenticationSuccess -->
+<!-- $$$authenticationUrlReady[overload1]$$$authenticationUrlReadyconstQUrl& -->
+<h3 class="fn" translate="no" id="authenticationUrlReady"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> AuthManager::<span class="name">authenticationUrlReady</span>(const <span class="type"><a href="https://doc.qt.io/qt/qurl.html" translate="no">QUrl</a></span> &amp;<i>url</i>)</h3>
+<p>Emitted when the authentication login URL is available.</p>
+<p>The <i translate="no">url</i> is intended to be loaded in a WebEngineView so the user can complete the login process. This signal originates from the internal <a href="authcore.html" translate="no">AuthCore</a> component and is emitted once a valid authentication flow has begun.</p>
+<p><b>See also </b><a href="qml-authbrowserpage.html" translate="no">AuthBrowserPage</a> and <a href="authcore.html" translate="no">AuthCore</a>.</p>
+<!-- @@@authenticationUrlReady -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

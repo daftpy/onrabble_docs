@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- keyprocesses.qdoc -->
+  <title>Key Processes | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+  <link rel="prev" href="clientguide.html" />
+  <link rel="next" href="payloads.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="clientguide.html">Client Developer Guide</a>
+<a class="nextPage" href="payloads.html">Payload Types</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level1"><a href="#lifecycle-summary">Lifecycle Summary</a></li>
+<li class="level1"><a href="#process-breakdown">Process Breakdown</a></li>
+<li class="level2"><a href="#discovery">Discovery</a></li>
+<li class="level2"><a href="#authentication">Authentication</a></li>
+<li class="level2"><a href="#connection">Connection</a></li>
+<li class="level2"><a href="#message-routing">Message Routing</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Key Processes</h1>
+<!-- $$$keyprocesses.html-description -->
+<div class="descr" id="details">
+<h2 id="overview">Overview</h2>
+<p>This section introduces the three foundational processes that define how the client connects to a chat server: discovery, authentication, and connection establishment.</p>
+<p>These steps are performed in sequence and drive the application lifecycle, resulting in one or more independent chat windows &mdash; each powered by its own <a href="clientmanager.html" translate="no">ClientManager</a> instance.</p>
+<h2 id="lifecycle-summary">Lifecycle Summary</h2>
+<ul>
+<li>The main window creates and holds a <a href="discoverymanager.html" translate="no">DiscoveryManager</a> and shows a discovery page</li>
+<li>When a server is selected, a stack view pushes an embedded authentication browser and <a href="authmanager.html" translate="no">AuthManager</a></li>
+<li>Upon successful login, an access token is emitted and passed into a newly created chat window</li>
+<li>Each chat window owns its own <a href="clientmanager.html" translate="no">ClientManager</a>, which manages connection state and exposes models</li>
+</ul>
+<div class="admonition note">
+<p><b>Note: </b>Discovery and authentication always occur in the main window. Chat windows are only created after a valid access token is received.</p>
+</div>
+<h2 id="process-breakdown">Process Breakdown</h2>
+<h3 id="discovery"><a href="discoveryflow.html">Discovery</a></h3>
+<p>Discovery begins the client session. When the user enters a server URL, the <a href="discoverymanager.html" translate="no">DiscoveryManager</a> retrieves server metadata such as WebSocket and OAuth endpoints. This data is required to initialize both the authentication flow and the later WebSocket connection.</p>
+<h3 id="authentication"><a href="authenticationflow.html">Authentication</a></h3>
+<p>Authentication uses OAuth2 via an embedded browser. Once the discovery metadata is loaded, an <a href="authmanager.html" translate="no">AuthManager</a> is created and presented alongside the browser. When authentication completes, an access token is emitted and handed off to the connection layer.</p>
+<h3 id="connection"><a href="connectionflow.html">Connection</a></h3>
+<p>After authentication, a new chat window is created. It owns a <a href="clientmanager.html" translate="no">ClientManager</a> instance which establishes a WebSocket connection using the discovered endpoints and received token. This manager handles real-time messaging and exposes filtered models for QML binding.</p>
+<h3 id="message-routing"><a href="messageflow.html">Message Routing</a></h3>
+<p>After connection, the WebsocketManager relays incoming server messages to the <a href="messagebroker.html" translate="no">MessageBroker</a>, which parses them into structured payloads and updates internal message models.</p>
+<p><a href="clientmanager.html" translate="no">ClientManager</a> exposes filtered proxy models for each channel and private conversation, allowing QML views to bind to isolated message streams within a session context.</p>
+</div>
+<!-- @@@keyprocesses.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="clientguide.html">Client Developer Guide</a>
+<a class="nextPage" href="payloads.html">Payload Types</a>
+</p>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

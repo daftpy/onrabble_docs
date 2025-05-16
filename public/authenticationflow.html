@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- authenticationflow.qdoc -->
+  <title>Authentication Flow | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+  <link rel="prev" href="discoveryflow.html" />
+  <link rel="next" href="connectionflow.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="discoveryflow.html">Discovery Flow</a>
+<a class="nextPage" href="connectionflow.html">Connection Flow</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level1"><a href="#flow-summary">Flow Summary</a></li>
+<li class="level1"><a href="#components-involved">Components Involved</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Authentication Flow</h1>
+<!-- $$$authenticationflow.html-description -->
+<div class="descr" id="details">
+<h2 id="overview">Overview</h2>
+<p>The authentication flow begins after a valid chat server is discovered using the <a href="discoverymanager.html" translate="no">DiscoveryManager</a>. Once the server metadata (i.e., a <a href="discoverypayload.html" translate="no">DiscoveryPayload</a>) is available, the login process can begin.</p>
+<p>The goal of this flow is to obtain an access token from the authentication server (e.g., Keycloak), which is later passed to the <a href="clientmanager.html" translate="no">ClientManager</a> for connecting to chat services.</p>
+<h2 id="flow-summary">Flow Summary</h2>
+<ul>
+<li>The user selects or enters a discovery URL</li>
+<li>The <a href="discoverymanager.html" translate="no">DiscoveryManager</a> emits <code translate="no">discoverySuccess</code> with a <a href="discoverypayload.html" translate="no">DiscoveryPayload</a></li>
+<li>The application pushes <a href="qml-authbrowserpage.html" translate="no">AuthBrowserPage</a> onto the stack and passes the payload</li>
+<li><a href="authmanager.html" translate="no">AuthManager</a> is used to initiate the login process</li>
+<li>Internally, <a href="authcore.html" translate="no">AuthCore</a> manages the OAuth2 protocol and emits a URL to be shown</li>
+<li><a href="qml-authbrowserpage.html" translate="no">AuthBrowserPage</a> displays the login page in a <code translate="no">WebEngineView</code></li>
+<li>When login succeeds, <a href="authmanager.html" translate="no">AuthManager</a> emits <code translate="no">authenticationSuccess</code> with the access token</li>
+<li>The app pops the <a href="qml-authbrowserpage.html" translate="no">AuthBrowserPage</a> and proceeds to connect using <a href="clientmanager.html" translate="no">ClientManager</a></li>
+</ul>
+<h2 id="components-involved">Components Involved</h2>
+<ul>
+<li><a href="discoverypayload.html" translate="no">DiscoveryPayload</a></li>
+<li><a href="authmanager.html" translate="no">AuthManager</a></li>
+<li><a href="authcore.html" translate="no">AuthCore</a></li>
+<li><a href="qml-authbrowserpage.html" translate="no">AuthBrowserPage</a></li>
+</ul>
+</div>
+<p><b>See also </b><a href="authmanager.html" translate="no">AuthManager</a>, <a href="qml-authbrowserpage.html" translate="no">AuthBrowserPage</a>, <a href="clientmanager.html" translate="no">ClientManager</a>, and <a href="discoveryflow.html">discoveryflow.html</a>.</p>
+<!-- @@@authenticationflow.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="discoveryflow.html">Discovery Flow</a>
+<a class="nextPage" href="connectionflow.html">Connection Flow</a>
+</p>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

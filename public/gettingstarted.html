@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- gettingstarted.qdoc -->
+  <meta name="description" content="A quick guide to building and running OnRabbleClient.">
+  <title>Getting Started | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+  <link rel="next" href="clientguide.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="nextPage" href="clientguide.html">Client Developer Guide</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#prerequisites">Prerequisites</a></li>
+<li class="level1"><a href="#cloning-the-repository">Cloning the Repository</a></li>
+<li class="level1"><a href="#building-the-project">Building the Project</a></li>
+<li class="level1"><a href="#running-the-application">Running the Application</a></li>
+<li class="level1"><a href="#using-the-application">Using the Application</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Getting Started</h1>
+<!-- $$$gettingstarted.html-description -->
+<div class="descr" id="details">
+<p>Welcome to the OnRabbleClient developer guide. This page walks you through the steps required to build, run, and explore the core functionality of the chat client application.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before building the project, make sure you have the following installed:</p>
+<ul>
+<li>Qt 6.9.0 (or compatible)</li>
+<li>CMake (minimum 3.16)</li>
+<li>A C++ compiler supporting C++20 (e.g., MSVC 2022 or GCC 11+)</li>
+<li>[Optional] A WebSocket server and Keycloak instance for full integration</li>
+</ul>
+<h2 id="cloning-the-repository">Cloning the Repository</h2>
+<pre class="cpp" translate="no">git clone https:<span class="comment">//github.com/daftpy/OnRabbleClient.git</span>
+cd onrabbleclient</pre>
+<h2 id="building-the-project">Building the Project</h2>
+<p>You can build the project with CMake like so:</p>
+<pre class="cpp" translate="no">cmake <span class="operator">-</span>B build <span class="operator">-</span>DCMAKE_BUILD_TYPE<span class="operator">=</span>Release
+cmake <span class="operator">-</span><span class="operator">-</span>build build</pre>
+<p>Alternatively, you may open the project directly in Qt Creator and configure the appropriate build kit.</p>
+<h2 id="running-the-application">Running the Application</h2>
+<p>Once built, run the application binary found in:</p>
+<pre class="cpp" translate="no"><span class="operator">.</span><span class="operator">/</span>build<span class="operator">/</span>bin<span class="operator">/</span>OnRabbleClient</pre>
+<p>Ensure that your backend WebSocket server and authentication provider (e.g., Keycloak) are running and accessible for full functionality.</p>
+<h2 id="using-the-application">Using the Application</h2>
+<p>When launched, the application will:</p>
+<ul>
+<li>Prompt you to discover a chat server via a URL</li>
+<li>Initiate the authentication flow</li>
+<li>Connect to the server and load your channels/messages</li>
+</ul>
+<p>You may extend the application by adding new payload types, UI components, or message routing logic as described in the rest of this documentation.</p>
+<div class="admonition note">
+<p><b>Note: </b>A sample Keycloak configuration and server setup instructions are available in the GitHub repository's README.md.</p>
+</div>
+</div>
+<p><b>See also </b><a href="index.html">index.html</a>, <a href="clientmanager.html" translate="no">ClientManager</a>, <a href="authmanager.html" translate="no">AuthManager</a>, and <a href="payloads.html">payloads.html</a>.</p>
+<!-- @@@gettingstarted.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="nextPage" href="clientguide.html">Client Developer Guide</a>
+</p>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

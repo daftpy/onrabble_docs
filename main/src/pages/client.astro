@@ -1,0 +1,113 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import downloadSimple from '../assets/download-simple.svg';
+import files from '../assets/files.svg';
+import engine from '../assets/engine.svg';
+import browser from '../assets/browser.svg';
+import scroll from '../assets/scroll.svg';
+import flask from '../assets/flask.svg';
+import onrabbleClient from '../assets/onrabbleclient.png';
+---
+
+<MainLayout>
+  <main class="container">
+    <section id="Hero">
+      <h1>OnRabble Client</h1>
+      <h2 class="tagline">
+        A native, real-time desktop chat client built with <span class="colorful">C++</span> and <span class="colorful">QML</span>. 
+        Designed to integrate tightly with the OnRabble Server and provide responsive user experience.
+      </h2>
+    </section>
+    <div class="screenshot">
+      <img src={onrabbleClient.src} alt="Qt client preview" style="" />
+    </div>
+    <div class="buttons">
+      <a class="button" href={`https://docs.${import.meta.env.PUBLIC_HOST}/client/`}><img src={files.src} alt="files icon" width="20"/> Client Docs</a>
+      <a class="button" href="https://docs.astro.build"><img src={downloadSimple.src} alt="download-simple icon" width="20"/> Download</a>
+    </div>
+    <section id="Promo">
+      <h3 class="header">What It Does <img src={engine.src} alt="Engine icon" width="22" height="22" /></h3>
+      <p>
+        The OnRabble Client connects to the OnRabble Server via <strong>WebSockets</strong> and supports <strong>real-time messaging</strong> with support for 
+        <strong>multiple channels</strong>, <strong>user presence</strong>, and <strong>private conversations</strong>. It fetches and displays messages from 
+        <span class="colorful">PostgreSQL</span> via the server, and receives recent updates from the <span class="colorful">Valkey</span> cache for fast message 
+        delivery.
+      </p>
+
+      <h3 class="header">Interface & Features <img src={browser.src} alt="Browser icon" width="22" height="22" /></h3>
+      <p>
+        The client offers a responsive and native-feeling interface built with <span>QML</span>. It supports <strong>channel navigation</strong>, 
+        <strong>real-time chat updates</strong>, <strong>private messaging</strong>, <strong>user lists</strong>, and shows <strong>timestamps</strong>. Layouts 
+        are optimized for usability, with a growing set of UI components built for future extension.
+      </p>
+
+      <h3 class="header">Technologies Used <img src={flask.src} alt="Flask icon" width="22" height="22" /></h3>
+      <ul class="techStack">
+          <li><strong>C++</strong> – client logic and state management</li>
+          <li><strong>QML</strong> – declarative UI layer</li>
+          <li><strong>WebSockets</strong> – real-time communication</li>
+          <li><strong>Qt 6</strong> – cross-platform toolkit</li>
+      </ul>
+
+      <h3 class="header">Design Philosophy <img src={scroll.src} alt="Scroll icon" width="22" height="22" /></h3>
+      <p>
+        The client is built for clarity and responsiveness. Native performance is paired with a declarative, modular design that makes future enhancements like 
+        notifications, themes, or offline support easy to integrate.
+      </p>
+    </section>
+
+    <section id="Repo">
+      <h2 class="header">See the Code</h2>
+      <p>
+      The full source code, environment setup, and contribution guide are available on GitHub:
+      </p>
+      <p>
+      <a href="https://github.com/daftpy/OpenRabbleServer" target="_blank" rel="noopener">🔗 OpenRabbleServer Repository</a>
+      </p>
+    </section>
+
+  </main>
+</MainLayout>
+
+<style>
+  #Hero {
+    font-size: 16px;
+    max-width: 768px;
+
+    margin: 0 auto;
+    margin-top: 3.5em;
+    padding-bottom: 1em;
+  }
+  #Repo {
+    font-size: 16px;
+    font-family: "Source Sans 3", sans-serif;
+
+    padding-top: 2.5em;
+  }
+  #Promo > .header {
+    padding-top: 2em;
+  }
+  #Promo > ul {
+    list-style: none;
+
+    padding: 0;
+  }
+  #Promo > ul > li {
+    padding: 0.5em 0;
+  }
+  #Promo > ul > li:first-of-type {
+    padding-top: 0;
+  }
+  #Promo > p > strong, .techStack > * strong {
+    color: #b9d3ee;
+  }
+  .tagline {
+    line-height: 1.2;
+    font-weight: lighter;
+  }
+  .screenshot {
+    max-width: 768px;
+
+    margin: 0 auto;
+  }
+</style>

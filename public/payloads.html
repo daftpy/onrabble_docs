@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- payloads.qdoc -->
+  <title>Payload Types | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+  <link rel="prev" href="keyprocesses.html" />
+  <link rel="next" href="models.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="keyprocesses.html">Key Processes</a>
+<a class="nextPage" href="models.html">Data Models</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#payload-structures">Payload Structures</a></li>
+<li class="level2"><a href="#chat-payloads">Chat Payloads</a></li>
+<li class="level2"><a href="#system-payloads">System Payloads</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Payload Types</h1>
+<!-- $$$payloads.html-description -->
+<div class="descr" id="details">
+<h2 id="payload-structures">Payload Structures</h2>
+<p>This page documents the core data structures (payloads) used throughout the OnRabbleClient application. These payloads represent both chat content and internal system entities, and are typically deserialized from JSON messages received via WebSocket or HTTP responses.</p>
+<h3 id="chat-payloads">Chat Payloads</h3>
+<p>These payloads represent user-visible messages exchanged in public and private channels.</p>
+<ul>
+<li><a href="chatmessagepayload.html" translate="no">ChatMessagePayload</a> &mdash; Represents a single public chat message posted to a channel.</li>
+<li><a href="privatemessagepayload.html" translate="no">PrivateMessagePayload</a> &mdash; Represents a one-to-one private message between users.</li>
+</ul>
+<h3 id="system-payloads">System Payloads</h3>
+<p>These payloads describe the state of the application, including server discovery and channel definitions.</p>
+<ul>
+<li><a href="channelpayload.html" translate="no">ChannelPayload</a> &mdash; Represents metadata for a named chat channel.</li>
+<li><a href="discoverypayload.html" translate="no">DiscoveryPayload</a> &mdash; Describes the endpoints returned from a discovery lookup.</li>
+<li><a href="clientuserpayload.html" translate="no">ClientUserPayload</a> &mdash; Represents the identity of an authenticated user.</li>
+<li><a href="userstatuspayload.html" translate="no">UserStatusPayload</a> &mdash; Represents another users status (e.g. username, id, and connection status)</li>
+</ul>
+</div>
+<!-- @@@payloads.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="keyprocesses.html">Key Processes</a>
+<a class="nextPage" href="models.html">Data Models</a>
+</p>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+localhost {
+    root * /srv/site
+    file_server
+    tls internal
+}
+
+docs.localhost {
+    # Serve landing page from /srv/site/docs for /
+    handle_path / {
+        root * /srv/site/docs
+        file_server
+    }
+
+    # Redirect bare /client to /client/
+    @clientNoSlash path /client
+    redir @clientNoSlash /client/
+
+    # Serve client docs from /srv/docs-client
+    handle_path /client/* {
+        root * /srv/docs-client
+        file_server browse
+    }
+
+    respond * 404
+    tls internal
+}
+
+
+pkg.localhost {
+    @root path /
+    redir @root /onrabble.com/chatserver # package name
+
+    reverse_proxy pkgsite:8080
+    tls internal
+}

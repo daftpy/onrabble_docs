@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- messagebroker.cpp -->
+  <meta name="description" content="Interprets and emits structured signals based on incoming JSON messages.">
+  <title>MessageBroker Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>MessageBroker</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#internal-members">Internal Members</a></li>
+<li class="level3"><a href="#internal-members-internal-members-1">Internal Members</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">MessageBroker Class</h1>
+<!-- $$$MessageBroker-brief -->
+<p>Interprets and emits structured signals based on incoming JSON messages. <a href="#details">More...</a></p>
+<!-- @@@MessageBroker -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;MessageBroker&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a></td></tr>
+</table></div>
+<ul>
+<li><a href="messagebroker-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="messagebroker.html#MessageBroker" translate="no">MessageBroker</a></b>(QObject *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ChatMessageModel &amp;</td><td class="memItemRight bottomAlign"><b><a href="messagebroker.html#messageModel" translate="no">messageModel</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> PrivateMessageModel &amp;</td><td class="memItemRight bottomAlign"><b><a href="messagebroker.html#privateMessageModel" translate="no">privateMessageModel</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="messagebroker.html#processMessage" translate="no">processMessage</a></b>(const QString &amp;<i>message</i>)</td></tr>
+</table></div>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="messagebroker.html#sendChatMessage" translate="no">sendChatMessage</a></b>(const QString &amp;<i>message</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="messagebroker.html#sendPrivateChatMessage" translate="no">sendPrivateChatMessage</a></b>(const QString &amp;<i>message</i>)</td></tr>
+</table></div>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="messagebroker.html#activeChannelsReceived" translate="no">activeChannelsReceived</a></b>(const QList&lt;ChannelPayload&gt; &amp;<i>channels</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="messagebroker.html#connectedUsersReceived" translate="no">connectedUsersReceived</a></b>(QList&lt;UserStatusPayload&gt; <i>users</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="messagebroker.html#outboundMessageReady" translate="no">outboundMessageReady</a></b>(const QString &amp;<i>message</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="messagebroker.html#userStatusUpdated" translate="no">userStatusUpdated</a></b>(const UserStatusPayload &amp;<i>payload</i>)</td></tr>
+</table></div>
+<!-- $$$MessageBroker-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The MessageBroker class handles inbound and outbound message processing for the chat system. It parses raw JSON messages from the server and emits strongly typed Qt signals which QML or C++ components can bind to.</p>
+<h3 id="internal-members">Internal Members</h3>
+<div class="internal"><h4 id="internal-members-internal-members-1">Internal Members</h4>
+<p>The following private member variables and functions are used internally by MessageBroker and are referenced here for developer clarity. Full documentation is available in the source file:</p>
+<p><b>Private</b> <b>Functions</b></p>
+<ul>
+<li><code translate="no">handleChatMessage(<a href="chatmessagepayload.html" translate="no">ChatMessagePayload</a>)</code> &ndash; adds a chat message to the message model.</li>
+<li><code translate="no">handleBulkChatMessages(<a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a>&lt;<a href="chatmessagepayload.html" translate="no">ChatMessagePayload</a>&gt;)</code> &ndash; adds multiple chat messages to the message model.</li>
+<li><code translate="no">handlePrivateChatMessage(<a href="privatemessagepayload.html" translate="no">PrivateMessagePayload</a>)</code> &ndash; adds a private chat message to the private chat message model.</li>
+<li><code translate="no">handleBulkPrivateChatMessages(<a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a>&lt;<a href="privatemessagepayload.html" translate="no">PrivateMessagePayload</a>&gt;)</code> &ndash; adds multiple private chat message to the private chat message model.</li>
+</ul>
+<p><b>Private</b> <b>Variables</b></p>
+<ul>
+<li><code translate="no">m_messageModel (<a href="chatmessagemodel.html" translate="no">ChatMessageModel</a>)</code> &ndash; Stores the chat messages</li>
+<li><code translate="no">m_privateMessageModel (<a href="privatemessagemodel.html" translate="no">PrivateMessageModel</a>)</code> &ndash; Stores the private chat messages</li>
+</ul>
+</div></div>
+<p><b>See also </b><a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> and <a href="https://doc.qt.io/qt/qqmlengine.html" translate="no">QQmlEngine</a>.</p>
+<!-- @@@MessageBroker -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$MessageBroker[overload1]$$$MessageBrokerQObject* -->
+<h3 class="fn" translate="no" id="MessageBroker"><code class="details extra" translate="no">[explicit]</code> MessageBroker::<span class="name">MessageBroker</span>(<span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs a new MessageBroker instance.</p>
+<p><i translate="no">parent</i> is the optional parent <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a>.</p>
+<!-- @@@MessageBroker -->
+<!-- $$$activeChannelsReceived[overload1]$$$activeChannelsReceivedconstQList<ChannelPayload>& -->
+<h3 class="fn" translate="no" id="activeChannelsReceived"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> MessageBroker::<span class="name">activeChannelsReceived</span>(const <span class="type"><a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a></span>&lt;<span class="type"><a href="channelpayload.html" translate="no">ChannelPayload</a></span>&gt; &amp;<i>channels</i>)</h3>
+<p>This signal is emitted when the server sends a list of active public channels.</p>
+<p>The <i translate="no">channels</i> list contains metadata for each public channel, used to populate models and configure proxies.</p>
+<!-- @@@activeChannelsReceived -->
+<!-- $$$connectedUsersReceived[overload1]$$$connectedUsersReceivedQList<UserStatusPayload> -->
+<h3 class="fn" translate="no" id="connectedUsersReceived"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> MessageBroker::<span class="name">connectedUsersReceived</span>(<span class="type"><a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a></span>&lt;<span class="type"><a href="userstatuspayload.html" translate="no">UserStatusPayload</a></span>&gt; <i>users</i>)</h3>
+<p>This signal is emitted when a list of currently connected users is received.</p>
+<p><i translate="no">users</i> contains the user IDs and connection states at the time of receipt.</p>
+<!-- @@@connectedUsersReceived -->
+<!-- $$$messageModel[overload1]$$$messageModel -->
+<h3 class="fn" translate="no" id="messageModel"><span class="type"><a href="chatmessagemodel.html" translate="no">ChatMessageModel</a></span> &amp;MessageBroker::<span class="name">messageModel</span>()</h3>
+<p>Returns the unfiltered model of all public chat messages.</p>
+<!-- @@@messageModel -->
+<!-- $$$outboundMessageReady[overload1]$$$outboundMessageReadyconstQString& -->
+<h3 class="fn" translate="no" id="outboundMessageReady"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> MessageBroker::<span class="name">outboundMessageReady</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>message</i>)</h3>
+<p>This signal is emitted when a validated and serialized message is ready to be sent to the server.</p>
+<p>The <i translate="no">message</i> is a compact JSON string to be passed directly to the WebSocket.</p>
+<!-- @@@outboundMessageReady -->
+<!-- $$$privateMessageModel[overload1]$$$privateMessageModel -->
+<h3 class="fn" translate="no" id="privateMessageModel"><span class="type"><a href="privatemessagemodel.html" translate="no">PrivateMessageModel</a></span> &amp;MessageBroker::<span class="name">privateMessageModel</span>()</h3>
+<p>Returns the unfiltered model of all private chat messages.</p>
+<!-- @@@privateMessageModel -->
+<!-- $$$processMessage[overload1]$$$processMessageconstQString& -->
+<h3 class="fn" translate="no" id="processMessage"><span class="type">void</span> MessageBroker::<span class="name">processMessage</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>message</i>)</h3>
+<p>Parses and dispatches a raw JSON message from the server.</p>
+<p>The message type is used to determine the appropriate internal handler or signal.</p>
+<p><i translate="no">message</i> is the JSON string received from the WebSocket.</p>
+<!-- @@@processMessage -->
+<!-- $$$sendChatMessage[overload1]$$$sendChatMessageconstQString& -->
+<h3 class="fn" translate="no" id="sendChatMessage"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> MessageBroker::<span class="name">sendChatMessage</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>message</i>)</h3>
+<p>Validates and serializes a public chat message.</p>
+<p>Emits <code translate="no">outboundMessageReady</code> if the payload is valid.</p>
+<p><i translate="no">message</i> is a JSON string with keys &quot;channel&quot; and &quot;message&quot;.</p>
+<!-- @@@sendChatMessage -->
+<!-- $$$sendPrivateChatMessage[overload1]$$$sendPrivateChatMessageconstQString& -->
+<h3 class="fn" translate="no" id="sendPrivateChatMessage"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> MessageBroker::<span class="name">sendPrivateChatMessage</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>message</i>)</h3>
+<p>Validates and serializes a private chat message.</p>
+<p>Emits <code translate="no">outboundMessageReady</code> if the payload is valid.</p>
+<p><i translate="no">message</i> is a JSON string with keys &quot;recipientId&quot; and &quot;message&quot;.</p>
+<!-- @@@sendPrivateChatMessage -->
+<!-- $$$userStatusUpdated[overload1]$$$userStatusUpdatedconstUserStatusPayload& -->
+<h3 class="fn" translate="no" id="userStatusUpdated"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> MessageBroker::<span class="name">userStatusUpdated</span>(const <span class="type"><a href="userstatuspayload.html" translate="no">UserStatusPayload</a></span> &amp;<i>payload</i>)</h3>
+<p>This signal is emitted when a single user's connection status changes.</p>
+<p>The <i translate="no">payload</i> includes the user’s ID, name, and updated connection state (online/offline).</p>
+<!-- @@@userStatusUpdated -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

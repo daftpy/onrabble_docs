@@ -1,0 +1,116 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import engine from '../assets/engine.svg';
+import browser from '../assets/browser.svg';
+import flask from '../assets/flask.svg';
+import scroll from '../assets/scroll.svg';
+import listChecks from '../assets/list-checks.svg';
+import rocketLaunch from '../assets/rocket-launch.svg';
+import adminDash from '../assets/admin-dash.png';
+---
+
+<MainLayout>
+  <main class="container">
+    <section id="Hero">
+      <h1>OnRabble Server</h1>
+      <h2 class="tagline">
+          A lightweight, real-time chat server written in <span class="colorful">Go</span>. It is fully containerized, secure, and designed to be self-hosted.
+      </h2>
+    </section>
+
+    <div class="screenshot">
+      <img src={adminDash.src} alt="Admin dashboard preview" style="" />
+    </div>
+
+    <div class="buttons">
+      <a class="button" href={`https://pkg.${import.meta.env.PUBLIC_HOST}/onrabble.com/chatserver/`}>
+        <img src={listChecks.src} alt="list-checks icon" width="20"/>
+        Server Docs
+      </a>
+      <a class="button" href={`https://${import.meta.env.PUBLIC_HOST}/launch`}>
+        <img src={rocketLaunch.src} alt="rocket-launch icon" width="20"/>
+        Launch Guide
+      </a>
+    </div>
+
+    <section id="Promo">
+
+      <h3 class="header">What It Powers <img src={engine.src} alt="Engine icon" width="22" height="22" /></h3>
+      <p>
+        OnRabble Server serves as the core backend for the OnRabble platform. It handles <strong>OAuth2 authentication</strong> through <span class="colorful">Keycloak</span>, 
+        establishes <strong>WebSocket-based communication</strong> for real-time delivery, processes <strong>public and private messages</strong>, and persists 
+        all data in a <span class="colorful">PostgreSQL</span> database. To reduce latency and lighten the database load, it uses <span class="colorful">Valkey</span> to cache <strong>recent 
+        messages</strong> for fast retrieval.
+      </p>
+      <p>
+        This backend currently supports two clients: a native Qt desktop client and an integrated admin dashboard.
+      </p>
+
+      <h3 class="header">Admin Panel <img src={browser.src} alt="Browser icon" width="22" height="22" /></h3>
+      <p>
+        The OnRabble Server includes a built-in admin dashboard designed to give you complete control over your running instance. From this interface, you can <strong>view and delete messages</strong>,
+        <strong>create or remove channels</strong>, and <strong>ban or disconnect users</strong> as needed. It also provides <strong>server-side analytics</strong> like message volume and session trends.
+      </p>
+
+      <h3 class="header">Technologies Used <img src={flask.src} alt="Flask icon" width="22" height="22" /></h3>
+      <ul class="techStack">
+          <li><span class="colorful">Go</span> – server logic and concurrency</li>
+          <li><span class="colorful">WebSockets</span> – real-time message transport</li>
+          <li><span class="colorful">PostgreSQL</span> – persistent storage</li>
+          <li><span class="colorful">Valkey</span> – in-memory caching</li>
+          <li><span class="colorful">Keycloak</span> – OAuth2 user authentication</li>
+          <li><span class="colorful">Docker Compose</span> – container orchestration</li>
+      </ul>
+
+      <h3 class="header">Design Philosophy <img src={scroll.src} alt="Scroll icon" width="22" height="22" /></h3>
+      <p>
+        OnRabble Server is built for developers and privacy-first teams who want complete control of their messaging stack.
+        It’s lean, modular, and extensible — ideal for secure, offline, or self-hosted deployments where trust and ownership matter.
+      </p>
+    </section>
+
+    <section id="Repo">
+      <h2 class="header">See the Code</h2>
+      <p>
+        The full source code, environment setup, and contribution guide are available on GitHub:
+      </p>
+      <p>
+        <a href="https://github.com/daftpy/OnRabbleClient" target="_blank" rel="noopener">🔗 OnRabbleClient Repository</a>
+      </p>
+    </section>
+
+  </main>
+</MainLayout>
+
+<style>
+  #Hero {
+    font-size: 16px;
+    max-width: 768px;
+
+    margin: 0 auto;
+    margin-top: 3.5em;
+  }
+  #Repo {
+    font-size: 16px;
+    font-family: "Source Sans 3", sans-serif;
+
+    padding-top: 2.5em;
+  }
+  #Promo > .header {
+    padding-top: 2em;
+  }
+  #Promo > ul {
+    list-style: none;
+
+    padding: 0;
+  }
+  #Promo > ul > li {
+    padding: 0.5em 0;
+  }
+  #Promo > ul > li:first-of-type {
+    padding-top: 0;
+  }
+  #Promo > p > strong {
+    color: #b9d3ee;
+  }
+</style>

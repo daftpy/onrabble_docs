@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- AuthBrowserPage.qml -->
+  <meta name="description" content="A full-screen authentication page used to complete OAuth2 login.">
+  <title>AuthBrowserPage QML Type | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>AuthBrowserPage</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#typical-usage">Typical Usage</a></li>
+<li class="level3"><a href="#properties">Properties</a></li>
+<li class="level3"><a href="#signals">Signals</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">AuthBrowserPage QML Type</h1>
+<!-- $$$AuthBrowserPage-brief -->
+<p>A full-screen authentication page used to complete OAuth2 login. <a href="#details">More...</a></p>
+<!-- @@@AuthBrowserPage -->
+<ul>
+<li><a href="qml-authbrowserpage-members.html">List of all members, including inherited members</a></li>
+</ul>
+<!-- $$$AuthBrowserPage-description -->
+<h2 id="details">Detailed Description</h2>
+<p>AuthBrowserPage presents a login interface for the user by displaying the authentication web page inside a WebEngineView. It is dynamically pushed onto a StackView by the main application in response to a completed discovery event.</p>
+<p>The authentication flow begins automatically when the component loads and a payload is set. The component listens for results from an <a href="authmanager.html" translate="no">AuthManager</a> and emits loginCompleted on success or loginCanceled if the user backs out.</p>
+<h2 id="typical-usage">Typical Usage</h2>
+<p>AuthBrowserPage is usually loaded by the root application after a <a href="qml-discoverypage.html" translate="no">DiscoveryPage</a> emits a <code translate="no">discoveryCompleted</code> signal:</p>
+<pre class="qml" translate="no">DiscoveryPage {
+    onDiscoveryCompleted: (payload) =&gt; {
+        stackView.push(authPageComponent, { payload: payload });
+    }
+}
+
+Component {
+    id: authPageComponent
+    AuthBrowserPage {
+        onLoginCompleted: (payload, token) =&gt; {
+            openChatWindow(payload, token);
+        }
+
+        onLoginCanceled: {
+            stackView.pop();
+        }
+    }
+}</pre>
+<h3 id="properties">Properties</h3>
+<ul>
+<li><b>payload</b> (<a href="discoverypayload.html" translate="no">DiscoveryPayload</a>) &mdash; The server and endpoint metadata used to initiate authentication.</li>
+</ul>
+<h3 id="signals">Signals</h3>
+<ul>
+<li><b>loginCompleted(<a href="discoverypayload.html" translate="no">DiscoveryPayload</a>, string)</b> &mdash; Emitted when authentication is successful.</li>
+<li><b>loginCanceled()</b> &mdash; Emitted when the user cancels the login process.</li>
+</ul>
+<div class="admonition note">
+<p><b>Note: </b>If no payload is set before component completion, the authentication process will not start.</p>
+</div>
+<!-- @@@AuthBrowserPage -->
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

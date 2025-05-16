@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- discoveryflow.qdoc -->
+  <title>Discovery Flow | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+  <link rel="prev" href="keyprocesses.html" />
+  <link rel="next" href="authenticationflow.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="keyprocesses.html">Key Processes</a>
+<a class="nextPage" href="authenticationflow.html">Authentication Flow</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level1"><a href="#flow-summary">Flow Summary</a></li>
+<li class="level1"><a href="#components-involved">Components Involved</a></li>
+<li class="level1"><a href="#example-json-payload">Example JSON Payload</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Discovery Flow</h1>
+<!-- $$$discoveryflow.html-description -->
+<div class="descr" id="details">
+<h2 id="overview">Overview</h2>
+<p>The discovery flow is the entry point for initializing a connection to a chat server. It begins when the user enters a server URL and ends with a parsed <a href="discoverypayload.html" translate="no">DiscoveryPayload</a> containing endpoint metadata required for login and messaging.</p>
+<p>This process is handled by the <a href="discoverymanager.html" translate="no">DiscoveryManager</a>, which delegates the actual HTTP request and JSON parsing to <a href="discoverycore.html" translate="no">DiscoveryCore</a>. The result is then emitted to QML or application logic via success or failure signals.</p>
+<p>This flow ensures that the application can dynamically adapt to different server configurations without requiring hardcoded URLs.</p>
+<h2 id="flow-summary">Flow Summary</h2>
+<ul>
+<li>The user enters or selects a discovery URL</li>
+<li><a href="discoverymanager.html" translate="no">DiscoveryManager</a> is called with <code translate="no">discover(urlString)</code></li>
+<li><a href="discoverycore.html" translate="no">DiscoveryCore</a> performs a GET request to the URL</li>
+<li>The server responds with a JSON object describing auth and chat endpoints</li>
+<li>The JSON is parsed into a <a href="discoverypayload.html" translate="no">DiscoveryPayload</a></li>
+<li>On success, <a href="discoverymanager.html" translate="no">DiscoveryManager</a> emits <code translate="no">discoverySuccess</code> with the payload</li>
+<li>On failure, <a href="discoverymanager.html" translate="no">DiscoveryManager</a> emits <code translate="no">discoveryFailed</code> with an error message</li>
+</ul>
+<h2 id="components-involved">Components Involved</h2>
+<ul>
+<li><a href="discoverymanager.html" translate="no">DiscoveryManager</a></li>
+<li><a href="discoverycore.html" translate="no">DiscoveryCore</a></li>
+<li><a href="discoverypayload.html" translate="no">DiscoveryPayload</a></li>
+<li><a href="qml-discoverypage.html" translate="no">DiscoveryPage</a></li>
+</ul>
+<h2 id="example-json-payload">Example JSON Payload</h2>
+<pre class="cpp" translate="no">{
+    <span class="string">&quot;server_name&quot;</span>: <span class="string">&quot;My Chat Server&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;auth_endpoint&quot;</span>: <span class="string">&quot;https://example.com/auth&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;token_endpoint&quot;</span>: <span class="string">&quot;https://example.com/token&quot;</span><span class="operator">,</span>
+    <span class="string">&quot;chat_endpoint&quot;</span>: <span class="string">&quot;wss://example.com/chat&quot;</span>
+}</pre>
+</div>
+<p><b>See also </b><a href="discoverymanager.html" translate="no">DiscoveryManager</a>, <a href="discoverypayload.html" translate="no">DiscoveryPayload</a>, and <a href="authenticationflow.html">authenticationflow.html</a>.</p>
+<!-- @@@discoveryflow.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="keyprocesses.html">Key Processes</a>
+<a class="nextPage" href="authenticationflow.html">Authentication Flow</a>
+</p>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

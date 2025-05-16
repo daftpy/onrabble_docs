@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- channelmodel.cpp -->
+  <meta name="description" content="Exposes a list of available public channels to QML and C++.">
+  <title>ChannelModel Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>ChannelModel</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-public-functions">Reimplemented Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#overview">Overview</a></li>
+<li class="level3"><a href="#internal-members">Internal Members</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">ChannelModel Class</h1>
+<!-- $$$ChannelModel-brief -->
+<p>Exposes a list of available public channels to QML and C++. <a href="#details">More...</a></p>
+<!-- @@@ChannelModel -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;ChannelModel&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="https://doc.qt.io/qt/qabstractlistmodel.html" translate="no">QAbstractListModel</a></td></tr>
+</table></div>
+<ul>
+<li><a href="channelmodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="channelmodel.html#ChannelModel" translate="no">ChannelModel</a></b>(QObject *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="channelmodel.html#addChannels" translate="no">addChannels</a></b>(const QList&lt;ChannelPayload&gt; &amp;<i>channels</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="channelmodel.html#clear" translate="no">clear</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ChannelPayload </td><td class="memItemRight bottomAlign"><b><a href="channelmodel.html#get" translate="no">get</a></b>(int <i>index</i>) const</td></tr>
+</table></div>
+<h2 id="reimplemented-public-functions">Reimplemented Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVariant </td><td class="memItemRight bottomAlign"><b><a href="channelmodel.html#data" translate="no">data</a></b>(const QModelIndex &amp;<i>index</i>, int <i>role</i> = Qt::DisplayRole) const override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QHash&lt;int, QByteArray&gt; </td><td class="memItemRight bottomAlign"><b><a href="channelmodel.html#roleNames" translate="no">roleNames</a></b>() const override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual int </td><td class="memItemRight bottomAlign"><b><a href="channelmodel.html#rowCount" translate="no">rowCount</a></b>(const QModelIndex &amp;<i>parent</i> = QModelIndex()) const override</td></tr>
+</table></div>
+<!-- $$$ChannelModel-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<h3 id="overview">Overview</h3>
+<p>ChannelModel maintains a collection of <a href="channelpayload.html" translate="no">ChannelPayload</a> objects that represent public chat channels the user may join. This model is primarily used to populate views such as channel sidebars, dropdowns, or tab lists in the chat UI.</p>
+<p>The model supports bulk insertion of channels, retrieving metadata for a specific index, and complete clearing of the internal channel list.</p>
+<div class="internal"><h4 id="internal-members">Internal Members</h4>
+<p><b>Private</b> <b>Variables</b></p>
+<ul>
+<li><code translate="no">m_channels (<a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a>&lt;<a href="channelpayload.html" translate="no">ChannelPayload</a>&gt;)</code> &ndash; Holds all currently known channels received from the server.</li>
+</ul>
+</div></div>
+<p><b>See also </b><a href="channelpayload.html" translate="no">ChannelPayload</a>.</p>
+<!-- @@@ChannelModel -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ChannelModel[overload1]$$$ChannelModelQObject* -->
+<h3 class="fn" translate="no" id="ChannelModel"><code class="details extra" translate="no">[explicit]</code> ChannelModel::<span class="name">ChannelModel</span>(<span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs an empty ChannelModel.</p>
+<p>This constructor is used to create the model instance, typically within a view model or controller class. It does not populate any data initially.</p>
+<p><i translate="no">parent</i> is the optional <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> parent.</p>
+<!-- @@@ChannelModel -->
+<!-- $$$addChannels[overload1]$$$addChannelsconstQList<ChannelPayload>& -->
+<h3 class="fn" translate="no" id="addChannels"><code class="details extra" translate="no">[invokable]</code> <span class="type">void</span> ChannelModel::<span class="name">addChannels</span>(const <span class="type"><a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a></span>&lt;<span class="type"><a href="channelpayload.html" translate="no">ChannelPayload</a></span>&gt; &amp;<i>channels</i>)</h3>
+<p>Appends the given list of <i translate="no">channels</i> to the model.</p>
+<p>This emits the appropriate signals for attached views to update accordingly.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@addChannels -->
+<!-- $$$clear[overload1]$$$clear -->
+<h3 class="fn" translate="no" id="clear"><code class="details extra" translate="no">[invokable]</code> <span class="type">void</span> ChannelModel::<span class="name">clear</span>()</h3>
+<p>Removes all channels from the model.</p>
+<p>This resets the model, clearing all internal data and notifying any attached views.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@clear -->
+<!-- $$$data[overload1]$$$dataconstQModelIndex&int -->
+<h3 class="fn" translate="no" id="data"><code class="details extra" translate="no">[override virtual]</code> <span class="type"><a href="https://doc.qt.io/qt/qvariant.html" translate="no">QVariant</a></span> ChannelModel::<span class="name">data</span>(const <span class="type"><a href="https://doc.qt.io/qt/qmodelindex.html" translate="no">QModelIndex</a></span> &amp;<i>index</i>, <span class="type">int</span> <i>role</i> = Qt::DisplayRole) const</h3>
+<p>Reimplements: <a href="https://doc.qt.io/qt/qabstractitemmodel.html#data" translate="no">QAbstractItemModel::data</a>(const QModelIndex &amp;index, int role) const.</p>
+<p>Returns the data at <i translate="no">index</i> for the given <i translate="no">role</i>.</p>
+<p>This includes channel ID, name, description, sort order, and the raw payload object. If the index is invalid, an invalid <a href="https://doc.qt.io/qt/qvariant.html" translate="no">QVariant</a> is returned.</p>
+<!-- @@@data -->
+<!-- $$$get[overload1]$$$getint -->
+<h3 class="fn" translate="no" id="get"><code class="details extra" translate="no">[invokable]</code> <span class="type"><a href="channelpayload.html" translate="no">ChannelPayload</a></span> ChannelModel::<span class="name">get</span>(<span class="type">int</span> <i>index</i>) const</h3>
+<p>Returns the channel at <i translate="no">index</i> as a <a href="channelpayload.html" translate="no">ChannelPayload</a>.</p>
+<p>If the index is out of bounds, an empty <a href="channelpayload.html" translate="no">ChannelPayload</a> is returned.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@get -->
+<!-- $$$roleNames[overload1]$$$roleNames -->
+<h3 class="fn" translate="no" id="roleNames"><code class="details extra" translate="no">[override virtual]</code> <span class="type"><a href="https://doc.qt.io/qt/qhash.html" translate="no">QHash</a></span>&lt;<span class="type">int</span>, <span class="type"><a href="https://doc.qt.io/qt/qbytearray.html" translate="no">QByteArray</a></span>&gt; ChannelModel::<span class="name">roleNames</span>() const</h3>
+<p>Reimplements: <a href="https://doc.qt.io/qt/qabstractitemmodel.html#roleNames" translate="no">QAbstractItemModel::roleNames</a>() const.</p>
+<p>Returns a mapping of role enums to QML-visible role names.</p>
+<p>These names are used when binding model roles in QML views.</p>
+<!-- @@@roleNames -->
+<!-- $$$rowCount[overload1]$$$rowCountconstQModelIndex& -->
+<h3 class="fn" translate="no" id="rowCount"><code class="details extra" translate="no">[override virtual]</code> <span class="type">int</span> ChannelModel::<span class="name">rowCount</span>(const <span class="type"><a href="https://doc.qt.io/qt/qmodelindex.html" translate="no">QModelIndex</a></span> &amp;<i>parent</i> = QModelIndex()) const</h3>
+<p>Reimplements: <a href="https://doc.qt.io/qt/qabstractitemmodel.html#rowCount" translate="no">QAbstractItemModel::rowCount</a>(const QModelIndex &amp;parent) const.</p>
+<p>Returns the number of channels in the model.</p>
+<p><i translate="no">parent</i> is unused in this implementation because the model is flat.</p>
+<p>This function is used by view components to determine the number of entries to display.</p>
+<!-- @@@rowCount -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

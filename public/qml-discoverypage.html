@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- DiscoveryPage.qml -->
+  <meta name="description" content="The initial page used to discover available OnRabble chat servers.">
+  <title>DiscoveryPage QML Type | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>DiscoveryPage</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#usage-example">Usage Example</a></li>
+<li class="level3"><a href="#properties">Properties</a></li>
+<li class="level3"><a href="#signals">Signals</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">DiscoveryPage QML Type</h1>
+<!-- $$$DiscoveryPage-brief -->
+<p>The initial page used to discover available OnRabble chat servers. <a href="#details">More...</a></p>
+<!-- @@@DiscoveryPage -->
+<ul>
+<li><a href="qml-discoverypage-members.html">List of all members, including inherited members</a></li>
+</ul>
+<!-- $$$DiscoveryPage-description -->
+<h2 id="details">Detailed Description</h2>
+<p>DiscoveryPage presents the user with a text input to enter a discovery URL and a button to begin the lookup process. It manages user feedback for success or failure and emits a signal when a valid <a href="discoverypayload.html" translate="no">DiscoveryPayload</a> is retrieved.</p>
+<p>On successful discovery, the page emits discoveryCompleted with the retrieved payload, allowing the application to initiate the authentication process (usually by pushing <a href="qml-authbrowserpage.html" translate="no">AuthBrowserPage</a> onto a stack).</p>
+<p>The page also includes a footer area showing previously used servers via RecentServersSelection.</p>
+<h2 id="usage-example">Usage Example</h2>
+<pre class="qml" translate="no"><span class="type"><a href="qml-discoverypage.html" translate="no">DiscoveryPage</a></span> {
+    <span class="name">id</span>: <span class="name">discoveryPage</span>
+    <span class="name">onDiscoveryCompleted</span>: (<span class="keyword"></span>payload) =&gt; {
+        <span class="name">stackView</span>.<span class="name">push</span>(<span class="name">authPageComponent</span>, { payload: <span class="name">payload</span> });
+    }
+}</pre>
+<h3 id="properties">Properties</h3>
+<ul>
+<li><b>urlInput</b> (alias) &mdash; Exposes the internal <code translate="no">TextInput</code> for external interaction (e.g., clearing after authentication).</li>
+</ul>
+<h3 id="signals">Signals</h3>
+<ul>
+<li><b>discoveryCompleted(<a href="discoverypayload.html" translate="no">DiscoveryPayload</a> payload)</b> &mdash; Emitted when a valid server configuration has been retrieved.</li>
+</ul>
+<p><b>See also </b><a href="discoverymanager.html" translate="no">DiscoveryManager</a>, <a href="qml-authbrowserpage.html" translate="no">AuthBrowserPage</a>, and <a href="clientmanager.html" translate="no">ClientManager</a>.</p>
+<!-- @@@DiscoveryPage -->
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

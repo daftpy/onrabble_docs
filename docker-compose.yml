@@ -1,0 +1,27 @@
+services:
+  caddy:
+    build:
+      context: .
+    container_name: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - pkgsite
+
+  pkgsite:
+    build:
+      context: .
+      dockerfile: pkgsite.Dockerfile
+    working_dir: /app
+    volumes:
+      - ./chatserver:/app
+    ports:
+      - "8085:8080"
+
+volumes:
+  caddy_data:
+  caddy_config:

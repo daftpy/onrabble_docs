@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- clientguide.qdoc -->
+  <title>Client Developer Guide | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+  <link rel="prev" href="gettingstarted.html" />
+  <link rel="next" href="keyprocesses.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="gettingstarted.html">Getting Started</a>
+<a class="nextPage" href="keyprocesses.html">Key Processes</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level1"><a href="#architecture-overview">Architecture Overview</a></li>
+<li class="level1"><a href="#key-processes">Key Processes</a></li>
+<li class="level1"><a href="#core-components">Core Components</a></li>
+<li class="level1"><a href="#payload-types">Payload Types</a></li>
+<li class="level1"><a href="#data-models">Data Models</a></li>
+<li class="level1"><a href="#extending-the-system">Extending the System</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Client Developer Guide</h1>
+<!-- $$$clientguide.html-description -->
+<div class="descr" id="details">
+<h2 id="overview">Overview</h2>
+<p>OnRabbleClient is a lightweight, extensible chat client designed for real-time communication over secure WebSocket connections. It is part of the OnRabble suite and integrates with a Go-based backend along with PostgreSQL and Keycloak for persistent data and user authentication.</p>
+<p>This guide offers a high-level overview of the core architecture, message flow, and types exposed to QML for declarative UI development.</p>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>OnRabbleClient follows a modular and event-driven architecture, structured around views, models, and manager classes. These components communicate via signals and are created dynamically based on the current authentication and connection state.</p>
+<p>The application separates responsibilities into layers:</p>
+<ul>
+<li>Discovery and authentication are handled in the main window</li>
+<li>Active chat sessions run in independent chat windows</li>
+<li>Session state, connection logic, and exposed models are encapsulated in <a href="clientmanager.html" translate="no">ClientManager</a></li>
+</ul>
+<p>This design promotes:</p>
+<ul>
+<li>Clear separation between discovery, authentication, and messaging concerns</li>
+<li>Stateless QML views that react to model and signal updates</li>
+<li>Support for multiple concurrent chat windows with isolated session state</li>
+</ul>
+<p>See <a href="keyprocesses.html">keyprocesses.html</a> for a detailed walkthrough of how discovery, authentication, and chat windows are initialized.</p>
+<h2 id="key-processes">Key Processes</h2>
+<p>These pages describe the core operations that govern the OnRabbleClient lifecycle, from selecting a server to authenticating and establishing a real-time connection.</p>
+<p>Each phase corresponds to a distinct part of the overall flow:</p>
+<div class="list"><ul>
+<li><a href="discoveryflow.html">discoveryflow.html</a> &mdash; How servers are discovered via URLs</li>
+<li><a href="authenticationflow.html">authenticationflow.html</a> &mdash; How users authenticate and receive access tokens</li>
+<li><a href="connectionflow.html">connectionflow.html</a> &mdash; How chat connections are established and managed</li>
+</ul>
+</div><h2 id="core-components">Core Components</h2>
+<p>These classes form the backbone of the system and are available to QML:</p>
+<div class="list"><ul>
+<li><a href="discoverymanager.html" translate="no">DiscoveryManager</a> &mdash; Initiates discovery of valid chat server configurations</li>
+<li><a href="authmanager.html" translate="no">AuthManager</a> &mdash; Manages authentication flow and the provision of the access token</li>
+<li><a href="clientmanager.html" translate="no">ClientManager</a> &mdash; Manages connection state, access tokens, and provides access to proxies</li>
+<li><a href="messagebroker.html" translate="no">MessageBroker</a> &mdash; Parses inbound messages and emits typed signals and model updates</li>
+</ul>
+</div><h2 id="payload-types">Payload Types</h2>
+<p>Payloads are small, structured data types deserialized from JSON. They represent messages, channels, user identity, and other server-side entities.</p>
+<p>See <a href="payloads.html">payloads.html</a> for a categorized overview of all payload types.</p>
+<h2 id="data-models">Data Models</h2>
+<p>Models in OnRabbleClient serve as reactive data sources for QML views. These are all subclasses of <a href="https://doc.qt.io/qt/qabstractlistmodel.html" translate="no">QAbstractListModel</a> or <a href="https://doc.qt.io/qt/qsortfilterproxymodel.html" translate="no">QSortFilterProxyModel</a>, and expose access to chat messages, channels, and filtered message views.</p>
+<p>Models do not handle validation or persistence; their sole responsibility is to represent and organize in-memory data for UI components to display. Data is inserted into these models by controller components such as <a href="clientmanager.html" translate="no">ClientManager</a> or <a href="messagebroker.html" translate="no">MessageBroker</a>.</p>
+<p>See <a href="models.html">models.html</a> for a categorized breakdown of all models.</p>
+<h2 id="extending-the-system">Extending the System</h2>
+<p>To support new behaviors or message types:</p>
+<div class="list"><ul>
+<li>Add parsing logic to <code translate="no">MessageBroker::processMessage()</code></li>
+<li>Create a new payload struct if needed</li>
+<li>Update a model or emit a new signal</li>
+<li>Expose the result to QML if appropriate</li>
+</ul>
+</div><div class="admonition note">
+<p><b>Note: </b>QML views automatically react to changes in exposed models and signals when bound properly.</p>
+</div>
+</div>
+<p><b>See also </b><a href="clientmanager.html" translate="no">ClientManager</a>, <a href="messagebroker.html" translate="no">MessageBroker</a>, <a href="discoverymanager.html" translate="no">DiscoveryManager</a>, <a href="payloads.html">payloads.html</a>, and <a href="authenticationflow.html">authenticationflow.html</a>.</p>
+<!-- @@@clientguide.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="gettingstarted.html">Getting Started</a>
+<a class="nextPage" href="keyprocesses.html">Key Processes</a>
+</p>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- clientuserpayload.cpp -->
+  <meta name="description" content="Represents the identity of the authenticated user based on JWT claims.">
+  <title>ClientUserPayload Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>ClientUserPayload</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">ClientUserPayload Class</h1>
+<!-- $$$ClientUserPayload-brief -->
+<p>Represents the identity of the authenticated user based on JWT claims. <a href="#details">More...</a></p>
+<!-- @@@ClientUserPayload -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;ClientUserPayload&gt;</code></td></tr>
+</table></div>
+<ul>
+<li><a href="clientuserpayload-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary" translate="no">
+<tr><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="clientuserpayload.html#email-prop" translate="no">email</a></b> : const QString</li>
+<li class="fn" translate="no"><b><a href="clientuserpayload.html#fullName-prop" translate="no">fullName</a></b> : const QString</li>
+<li class="fn" translate="no"><b><a href="clientuserpayload.html#id-prop" translate="no">id</a></b> : const QString</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="clientuserpayload.html#isValid-prop" translate="no">isValid</a></b> : const bool</li>
+<li class="fn" translate="no"><b><a href="clientuserpayload.html#roles-prop" translate="no">roles</a></b> : const QStringList</li>
+<li class="fn" translate="no"><b><a href="clientuserpayload.html#username-prop" translate="no">username</a></b> : const QString</li>
+</ul>
+</td></tr>
+</table></div>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="clientuserpayload.html#ClientUserPayload" translate="no">ClientUserPayload</a></b>(const QVariantMap &amp;<i>claims</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="clientuserpayload.html#email-prop" translate="no">email</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="clientuserpayload.html#fullName-prop" translate="no">fullName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="clientuserpayload.html#hasRole" translate="no">hasRole</a></b>(const QString &amp;<i>role</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="clientuserpayload.html#id-prop" translate="no">id</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="clientuserpayload.html#isValid-prop" translate="no">isValid</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="clientuserpayload.html#reset" translate="no">reset</a></b>(const QVariantMap &amp;<i>claims</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="clientuserpayload.html#roles-prop" translate="no">roles</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="clientuserpayload.html#username-prop" translate="no">username</a></b>() const</td></tr>
+</table></div>
+<!-- $$$ClientUserPayload-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>This class stores decoded user information, such as user ID, username, email, and roles, extracted from a JWT payload. It is typically used in QML to check user identity and roles.</p>
+</div>
+<!-- @@@ClientUserPayload -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$email-prop$$$email -->
+<h3 class="fn" translate="no" id="email-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">email</span> : const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the email address associated with the user.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>email</b></span>() const</td></tr>
+</table></div>
+<!-- @@@email -->
+<!-- $$$fullName-prop$$$fullName -->
+<h3 class="fn" translate="no" id="fullName-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">fullName</span> : const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the user's full display name.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>fullName</b></span>() const</td></tr>
+</table></div>
+<!-- @@@fullName -->
+<!-- $$$id-prop$$$id -->
+<h3 class="fn" translate="no" id="id-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">id</span> : const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the unique user ID (&quot;sub&quot; claim).</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>id</b></span>() const</td></tr>
+</table></div>
+<!-- @@@id -->
+<!-- $$$isValid-prop$$$isValid -->
+<h3 class="fn" translate="no" id="isValid-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">isValid</span> : const <span class="type">bool</span></h3>
+<p>Returns <code translate="no">true</code> if the payload contains valid identity data (ID and username).</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isValid</b></span>() const</td></tr>
+</table></div>
+<!-- @@@isValid -->
+<!-- $$$roles-prop$$$roles -->
+<h3 class="fn" translate="no" id="roles-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">roles</span> : const <span class="type"><a href="https://doc.qt.io/qt/qstringlist.html" translate="no">QStringList</a></span></h3>
+<p>Returns the list of roles assigned to the user.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QStringList </td><td class="memItemRight bottomAlign"><span class="name"><b>roles</b></span>() const</td></tr>
+</table></div>
+<!-- @@@roles -->
+<!-- $$$username-prop$$$username -->
+<h3 class="fn" translate="no" id="username-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">username</span> : const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the preferred username.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>username</b></span>() const</td></tr>
+</table></div>
+<!-- @@@username -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ClientUserPayload[overload1]$$$ClientUserPayloadconstQVariantMap& -->
+<h3 class="fn" translate="no" id="ClientUserPayload"><code class="details extra" translate="no">[explicit]</code> ClientUserPayload::<span class="name">ClientUserPayload</span>(const <span class="type"><a href="https://doc.qt.io/qt/qvariant.html#QVariantMap-typedef" translate="no">QVariantMap</a></span> &amp;<i>claims</i>)</h3>
+<p>Constructs a ClientUserPayload from a parsed JWT claim map.</p>
+<p><i translate="no">claims</i> is the <a href="https://doc.qt.io/qt/qvariant.html#QVariantMap-typedef" translate="no">QVariantMap</a> containing the decoded claims.</p>
+<!-- @@@ClientUserPayload -->
+<!-- $$$hasRole[overload1]$$$hasRoleconstQString& -->
+<h3 class="fn" translate="no" id="hasRole"><span class="type">bool</span> ClientUserPayload::<span class="name">hasRole</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>role</i>) const</h3>
+<p>Returns <code translate="no">true</code> if the user has the specified <i translate="no">role</i>.</p>
+<p>Case-insensitive comparison is used.</p>
+<!-- @@@hasRole -->
+<!-- $$$reset[overload1]$$$resetconstQVariantMap& -->
+<h3 class="fn" translate="no" id="reset"><span class="type">void</span> ClientUserPayload::<span class="name">reset</span>(const <span class="type"><a href="https://doc.qt.io/qt/qvariant.html#QVariantMap-typedef" translate="no">QVariantMap</a></span> &amp;<i>claims</i>)</h3>
+<p>Re-parses the internal state using new JWT claims.</p>
+<p><i translate="no">claims</i> is the new set of decoded JWT fields.</p>
+<!-- @@@reset -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- channelmessageproxymodel.cpp -->
+  <meta name="description" content="Filters chat messages by channel name using a QSortFilterProxyModel.">
+  <title>ChannelMessageProxyModel Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>ChannelMessageProxyModel</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#reimplemented-protected-functions">Reimplemented Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#overview">Overview</a></li>
+<li class="level3"><a href="#internal-members">Internal Members</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">ChannelMessageProxyModel Class</h1>
+<!-- $$$ChannelMessageProxyModel-brief -->
+<p>Filters chat messages by channel name using a <a href="https://doc.qt.io/qt/qsortfilterproxymodel.html" translate="no">QSortFilterProxyModel</a>. <a href="#details">More...</a></p>
+<!-- @@@ChannelMessageProxyModel -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;ChannelMessageProxyModel&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="https://doc.qt.io/qt/qsortfilterproxymodel.html" translate="no">QSortFilterProxyModel</a></td></tr>
+</table></div>
+<ul>
+<li><a href="channelmessageproxymodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="channelmessageproxymodel.html#ChannelMessageProxyModel" translate="no">ChannelMessageProxyModel</a></b>(QObject *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="channelmessageproxymodel.html#channel" translate="no">channel</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="channelmessageproxymodel.html#name-prop" translate="no">channelName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariantMap </td><td class="memItemRight bottomAlign"><b><a href="channelmessageproxymodel.html#get" translate="no">get</a></b>(int <i>row</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="channelmessageproxymodel.html#setChannel" translate="no">setChannel</a></b>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="channelmessageproxymodel.html#channel-prop" translate="no">channelChanged</a></b>()</td></tr>
+</table></div>
+<h2 id="reimplemented-protected-functions">Reimplemented Protected Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="channelmessageproxymodel.html#filterAcceptsRow" translate="no">filterAcceptsRow</a></b>(int <i>sourceRow</i>, const QModelIndex &amp;<i>sourceParent</i>) const override</td></tr>
+</table></div>
+<!-- $$$ChannelMessageProxyModel-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<h3 id="overview">Overview</h3>
+<p>ChannelMessageProxyModel provides a filtered view over the <a href="chatmessagemodel.html" translate="no">ChatMessageModel</a>, exposing only those messages that belong to a specified channel. It is commonly used in tabbed chat UIs or side-by-side channel panes to isolate conversations by topic.</p>
+<p>The proxy works by matching the ChatMessageModel::ChannelRole of each message against a user-specified channel string, which can be set from C++ or QML.</p>
+<div class="internal"><h4 id="internal-members">Internal Members</h4>
+<p><b>Private</b> <b>Variables</b></p>
+<ul>
+<li><code translate="no">m_channel (<a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a>)</code> &ndash; The name of the channel currently used to filter messages.</li>
+</ul>
+</div></div>
+<p><b>See also </b><a href="channelpayload.html" translate="no">ChannelPayload</a> and <a href="chatmessagemodel.html" translate="no">ChatMessageModel</a>.</p>
+<!-- @@@ChannelMessageProxyModel -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ChannelMessageProxyModel[overload1]$$$ChannelMessageProxyModelQObject* -->
+<h3 class="fn" translate="no" id="ChannelMessageProxyModel"><code class="details extra" translate="no">[explicit]</code> ChannelMessageProxyModel::<span class="name">ChannelMessageProxyModel</span>(<span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs a new proxy for filtering messages by channel.</p>
+<p>Sets the filter role to ChatMessageModel::ChannelRole and enables dynamic filtering behavior when the channel name changes.</p>
+<p><i translate="no">parent</i> is the optional <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> parent.</p>
+<!-- @@@ChannelMessageProxyModel -->
+<!-- $$$channel -->
+<h3 class="fn" translate="no" id="channel"><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> ChannelMessageProxyModel::<span class="name">channel</span>() const</h3>
+<p>Returns the current channel name used for filtering.</p>
+<div class="admonition note"><p><b>Note: </b>Getter function for property channel. </p>
+</div><p><b>See also </b><a href="channelmessageproxymodel.html#setChannel" translate="no">setChannel</a>().</p>
+<!-- @@@channel -->
+<!-- $$$filterAcceptsRow[overload1]$$$filterAcceptsRowintconstQModelIndex& -->
+<h3 class="fn" translate="no" id="filterAcceptsRow"><code class="details extra" translate="no">[override virtual protected]</code> <span class="type">bool</span> ChannelMessageProxyModel::<span class="name">filterAcceptsRow</span>(<span class="type">int</span> <i>sourceRow</i>, const <span class="type"><a href="https://doc.qt.io/qt/qmodelindex.html" translate="no">QModelIndex</a></span> &amp;<i>sourceParent</i>) const</h3>
+<p>Reimplements: <a href="https://doc.qt.io/qt/qsortfilterproxymodel.html#filterAcceptsRow" translate="no">QSortFilterProxyModel::filterAcceptsRow</a>(int source_row, const QModelIndex &amp;source_parent) const.</p>
+<p>Returns true if the message at <i translate="no">sourceRow</i> belongs to the current channel.</p>
+<p>This override implements the actual filtering logic by comparing the channel name of each source row against m_channel.</p>
+<!-- @@@filterAcceptsRow -->
+<!-- $$$get[overload1]$$$getint -->
+<h3 class="fn" translate="no" id="get"><code class="details extra" translate="no">[invokable]</code> <span class="type"><a href="https://doc.qt.io/qt/qvariant.html#QVariantMap-typedef" translate="no">QVariantMap</a></span> ChannelMessageProxyModel::<span class="name">get</span>(<span class="type">int</span> <i>row</i>) const</h3>
+<p>Returns all role data at proxy row <i translate="no">row</i> as a <a href="https://doc.qt.io/qt/qvariant.html#QVariantMap-typedef" translate="no">QVariantMap</a>.</p>
+<p>This method maps the row index from the proxy to the source model, retrieves data for all roles, and returns the values as a QML-friendly map.</p>
+<p>Returns an empty map if the row is invalid.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@get -->
+<!-- $$$setChannel -->
+<h3 class="fn" translate="no" id="setChannel"><span class="type">void</span> ChannelMessageProxyModel::<span class="name">setChannel</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>name</i>)</h3>
+<p>Updates the channel filter string to <i translate="no">name</i>.</p>
+<p>This will trigger re-evaluation of the source model and emit <a href="channelmessageproxymodel.html#channel-prop" translate="no">channelChanged</a>() if the name has changed.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="channelmessageproxymodel.html#channel" translate="no">channel</a>. </p>
+</div><p><b>See also </b><a href="channelmessageproxymodel.html#channel" translate="no">channel</a>().</p>
+<!-- @@@setChannel -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

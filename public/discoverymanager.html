@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- discoverymanager.cpp -->
+  <meta name="description" content="Provides a high-level interface for initiating discovery requests.">
+  <title>DiscoveryManager Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>DiscoveryManager</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">DiscoveryManager Class</h1>
+<!-- $$$DiscoveryManager-brief -->
+<p>Provides a high-level interface for initiating discovery requests. <a href="#details">More...</a></p>
+<!-- @@@DiscoveryManager -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;DiscoveryManager&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a></td></tr>
+</table></div>
+<ul>
+<li><a href="discoverymanager-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="discoverymanager.html#DiscoveryManager" translate="no">DiscoveryManager</a></b>(QObject *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="discoverymanager.html#discover" translate="no">discover</a></b>(const QString <i>urlString</i>)</td></tr>
+</table></div>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="discoverymanager.html#discoveryFailed" translate="no">discoveryFailed</a></b>(const QString &amp;<i>error</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="discoverymanager.html#discoverySuccess" translate="no">discoverySuccess</a></b>(const DiscoveryPayload &amp;<i>payload</i>)</td></tr>
+</table></div>
+<!-- $$$DiscoveryManager-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The DiscoveryManager is responsible for initiating the server discovery process using a URL. It emits signals to indicate success or failure. It wraps <a href="discoverycore.html" translate="no">DiscoveryCore</a> to perform the actual network request and JSON parsing.</p>
+<div class="admonition note">
+<p><b>Note: </b>The DiscoveryManager is intended to be used from QML and exposes a <code translate="no">discover()</code> method that takes a string-formatted URL. When the request finishes, it emits either <code translate="no">discoverySuccess</code> or <code translate="no">discoveryFailed</code> depending on the result.</p>
+</div>
+</div>
+<p><b>See also </b><a href="discoverycore.html" translate="no">DiscoveryCore</a>, <a href="discoverypayload.html" translate="no">DiscoveryPayload</a>, and <a href="qml-discoverypage.html" translate="no">DiscoveryPage</a>.</p>
+<!-- @@@DiscoveryManager -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$DiscoveryManager[overload1]$$$DiscoveryManagerQObject* -->
+<h3 class="fn" translate="no" id="DiscoveryManager"><code class="details extra" translate="no">[explicit]</code> DiscoveryManager::<span class="name">DiscoveryManager</span>(<span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs the DiscoveryManager.</p>
+<p><i translate="no">parent</i> is the optional <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> parent.</p>
+<p>Sets up internal signal connections between <a href="discoverycore.html" translate="no">DiscoveryCore</a> and this manager.</p>
+<!-- @@@DiscoveryManager -->
+<!-- $$$discover[overload1]$$$discoverconstQString -->
+<h3 class="fn" translate="no" id="discover"><code class="details extra" translate="no">[invokable]</code> <span class="type">void</span> DiscoveryManager::<span class="name">discover</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>urlString</i>)</h3>
+<p>Begins the discovery process using the given <i translate="no">urlString</i>.</p>
+<p>This method initiates a network request to the provided URL string, attempting to retrieve and parse discovery metadata from a remote chat server.</p>
+<p>Upon success, the <a href="discoverymanager.html#discoverySuccess" translate="no">discoverySuccess</a> signal is emitted with the resulting <a href="discoverypayload.html" translate="no">DiscoveryPayload</a>. If an error occurs, the <a href="discoverymanager.html#discoveryFailed" translate="no">discoveryFailed</a> signal is emitted with a description of the failure.</p>
+<div class="admonition note">
+<p><b>Note: </b>Only one request is active at a time. Calling this while a previous request is ongoing will cancel the prior request.</p>
+</div>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@discover -->
+<!-- $$$discoveryFailed[overload1]$$$discoveryFailedconstQString& -->
+<h3 class="fn" translate="no" id="discoveryFailed"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> DiscoveryManager::<span class="name">discoveryFailed</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>error</i>)</h3>
+<p>Emitted when discovery fails due to a network or parsing error.</p>
+<p>This signal is emitted when the discovery request cannot complete successfully. The <i translate="no">error</i> string describes the reason for the failure (e.g., connection refused or invalid format).</p>
+<!-- @@@discoveryFailed -->
+<!-- $$$discoverySuccess[overload1]$$$discoverySuccessconstDiscoveryPayload& -->
+<h3 class="fn" translate="no" id="discoverySuccess"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> DiscoveryManager::<span class="name">discoverySuccess</span>(const <span class="type"><a href="discoverypayload.html" translate="no">DiscoveryPayload</a></span> &amp;<i>payload</i>)</h3>
+<p>Emitted when the discovery process completes successfully.</p>
+<p>This signal is emitted after a successful request to a discovery endpoint. The <i translate="no">payload</i> contains the server's metadata used to configure the client.</p>
+<!-- @@@discoverySuccess -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout>
+	<div class="container">
+    <section id="Note">
+      <div>
+        <p>
+          <strong>Note:</strong> This project is part of an ongoing learning process. These are my first complete documentation sets and may change as I improve the tooling and structure.
+        </p>
+      </div>
+    </section>
+    <main id="Content">
+      <section id="Docs">
+        <h1 class="header">Server Documentation</h1>
+        <p>
+          The server developer docs are available here. Documentation is extensive but not complete. These documents were generated
+          using <a href="https://github.com/golang/pkgsite">pkgsite</a>.
+        </p>
+        <a href={`https://pkg.${import.meta.env.PUBLIC_HOST}/onrabble.com/chatserver`}>Server Docs</a>
+
+        <h1 class="header">Client Documentation</h1>
+        <p>
+          The client developer docs are available here. Documentation is extensive but not complete. These documents were generated
+          using <a href="https://doc.qt.io/qt-6/01-qdoc-manual.html">QDoc</a>.
+        </p>
+        <a href={`https://docs.${import.meta.env.PUBLIC_HOST}/client/`}>Client Docs</a>
+      </section>
+
+      <section id="Contribute">
+        <h3 class="header">Contribute</h3>
+			  <p>The server and client exist as seperate projects. You can read to learn more about each below.</p>
+			  <div>
+          <!-- <img src={computerTower.src} alt="Git Fork Logo" width="28" height="28" /> -->
+          <a href="/server">OnRabble Server</a>
+
+
+          <!-- <img src={appWindow.src} alt="Git Fork Logo" width="28" height="28" /> -->
+          <a href="/client">OnRabble Client</a>
+        </div>
+        <p>
+          While I’m not anticipating contributions at this time, I welcome constructive feedback, suggestions, and insight from experienced developers.
+          Your input is genuinely appreciated and will help me grow as a developer. 💕
+        </p>
+      </section>
+
+    </main>
+  </div>
+</MainLayout>
+
+<style>
+  main {
+    text-align: center;
+  }
+
+  #Content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+  }
+  #Contribute {
+    background:#1c222e;
+    border-radius: 6px;
+
+    /* margin-top: 3em; */
+    padding: 0 1em 1em 1em;
+  }
+  #Contribute > div {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+
+    padding: 0 2.5em;
+  }
+  #Docs > .header {
+    padding-top: 2.5em;
+  }
+  #Docs > .header:first-of-type {
+    padding-top: 0;
+  }
+  
+  #Note {
+    font-size: 13px;
+    padding: 2.5em 0;
+  }
+  #Note > div {
+    color: #e3a92b;
+    border-radius: 6px;
+    border: 1px solid #e3a92b;
+    text-align: center;
+
+    padding: 0 1em;
+  }
+</style>

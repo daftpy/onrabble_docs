@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- discoverypayload.cpp -->
+  <meta name="description" content="Represents server discovery data including endpoint URLs and metadata.">
+  <title>DiscoveryPayload Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>DiscoveryPayload</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">DiscoveryPayload Class</h1>
+<!-- $$$DiscoveryPayload-brief -->
+<p>Represents server discovery data including endpoint URLs and metadata. <a href="#details">More...</a></p>
+<!-- @@@DiscoveryPayload -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;DiscoveryPayload&gt;</code></td></tr>
+</table></div>
+<ul>
+<li><a href="discoverypayload-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary" translate="no">
+<tr><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="discoverypayload.html#authEndpoint-prop" translate="no">authEndpoint</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="discoverypayload.html#chatEndpoint-prop" translate="no">chatEndpoint</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="discoverypayload.html#healthUrl-prop" translate="no">healthUrl</a></b> : QString</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="discoverypayload.html#serverId-prop" translate="no">serverId</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="discoverypayload.html#serverName-prop" translate="no">serverName</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="discoverypayload.html#tokenEndpoint-prop" translate="no">tokenEndpoint</a></b> : QString</li>
+</ul>
+</td></tr>
+</table></div>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#DiscoveryPayload" translate="no">DiscoveryPayload</a></b>(const QJsonObject &amp;<i>json</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#DiscoveryPayload-1" translate="no">DiscoveryPayload</a></b>(const QString &amp;<i>name</i>, const QString &amp;<i>serverId</i>, const QString &amp;<i>authEndpoint</i>, const QString &amp;<i>tokenEndpoint</i>, const QString <i>chatEndpoint</i>, const QString <i>healthUrl</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#authEndpoint-prop" translate="no">authEndpoint</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#chatEndpoint-prop" translate="no">chatEndpoint</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#healthUrl-prop" translate="no">healthUrl</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#serverId-prop" translate="no">serverId</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#serverName-prop" translate="no">serverName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#setAuthEndpoint" translate="no">setAuthEndpoint</a></b>(const QString &amp;<i>endpoint</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#setChatEndpoint" translate="no">setChatEndpoint</a></b>(const QString &amp;<i>endpoint</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#setHealthUrl" translate="no">setHealthUrl</a></b>(const QString &amp;<i>url</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#setServerId" translate="no">setServerId</a></b>(const QString &amp;<i>serverId</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#setServerName" translate="no">setServerName</a></b>(const QString &amp;<i>serverName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#setTokenEndpoint" translate="no">setTokenEndpoint</a></b>(const QString &amp;<i>endpoint</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="discoverypayload.html#tokenEndpoint-prop" translate="no">tokenEndpoint</a></b>() const</td></tr>
+</table></div>
+<!-- $$$DiscoveryPayload-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>DiscoveryPayload encapsulates the fields returned from a discovery server, such as the server name and key endpoint URLs for authentication and messaging.</p>
+</div>
+<!-- @@@DiscoveryPayload -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$authEndpoint-prop$$$authEndpoint$$$setAuthEndpointconstQString& -->
+<h3 class="fn" translate="no" id="authEndpoint-prop"><span class="name">authEndpoint</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the authentication endpoint URL.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>authEndpoint</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="discoverypayload.html#setAuthEndpoint" translate="no">setAuthEndpoint</a></b></span>(const QString &amp;<i>endpoint</i>)</td></tr>
+</table></div>
+<!-- @@@authEndpoint -->
+<!-- $$$chatEndpoint-prop$$$chatEndpoint$$$setChatEndpointconstQString& -->
+<h3 class="fn" translate="no" id="chatEndpoint-prop"><span class="name">chatEndpoint</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the WebSocket chat endpoint URL.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>chatEndpoint</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="discoverypayload.html#setChatEndpoint" translate="no">setChatEndpoint</a></b></span>(const QString &amp;<i>endpoint</i>)</td></tr>
+</table></div>
+<!-- @@@chatEndpoint -->
+<!-- $$$healthUrl-prop$$$healthUrl$$$setHealthUrlconstQString& -->
+<h3 class="fn" translate="no" id="healthUrl-prop"><span class="name">healthUrl</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the health check endpoint URL.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>healthUrl</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="discoverypayload.html#setHealthUrl" translate="no">setHealthUrl</a></b></span>(const QString &amp;<i>url</i>)</td></tr>
+</table></div>
+<!-- @@@healthUrl -->
+<!-- $$$serverId-prop$$$serverId$$$setServerIdconstQString& -->
+<h3 class="fn" translate="no" id="serverId-prop"><span class="name">serverId</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the internal identifier for the server.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>serverId</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="discoverypayload.html#setServerId" translate="no">setServerId</a></b></span>(const QString &amp;<i>serverId</i>)</td></tr>
+</table></div>
+<!-- @@@serverId -->
+<!-- $$$serverName-prop$$$serverName$$$setServerNameconstQString& -->
+<h3 class="fn" translate="no" id="serverName-prop"><span class="name">serverName</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>This property holds the user-facing name of the server.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>serverName</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="discoverypayload.html#setServerName" translate="no">setServerName</a></b></span>(const QString &amp;<i>serverName</i>)</td></tr>
+</table></div>
+<!-- @@@serverName -->
+<!-- $$$tokenEndpoint-prop$$$tokenEndpoint$$$setTokenEndpointconstQString& -->
+<h3 class="fn" translate="no" id="tokenEndpoint-prop"><span class="name">tokenEndpoint</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Returns the token exchange endpoint URL.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>tokenEndpoint</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="discoverypayload.html#setTokenEndpoint" translate="no">setTokenEndpoint</a></b></span>(const QString &amp;<i>endpoint</i>)</td></tr>
+</table></div>
+<!-- @@@tokenEndpoint -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$DiscoveryPayload[overload1]$$$DiscoveryPayloadconstQJsonObject& -->
+<h3 class="fn" translate="no" id="DiscoveryPayload"><code class="details extra" translate="no">[explicit]</code> DiscoveryPayload::<span class="name">DiscoveryPayload</span>(const <span class="type"><a href="https://doc.qt.io/qt/qjsonobject.html" translate="no">QJsonObject</a></span> &amp;<i>json</i>)</h3>
+<p>Constructs a DiscoveryPayload from a JSON object.</p>
+<p>Extracts fields from <i translate="no">json</i> including server name, ID, and endpoint URLs.</p>
+<!-- @@@DiscoveryPayload -->
+<!-- $$$DiscoveryPayload$$$DiscoveryPayloadconstQString&constQString&constQString&constQString&constQStringconstQString -->
+<h3 class="fn" translate="no" id="DiscoveryPayload-1">DiscoveryPayload::<span class="name">DiscoveryPayload</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>name</i>, const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>serverId</i>, const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>authEndpoint</i>, const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>tokenEndpoint</i>, const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>chatEndpoint</i>, const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>healthUrl</i>)</h3>
+<p>Constructs a DiscoveryPayload with explicit values.</p>
+<p><i translate="no">name</i> is the display name of the server. <i translate="no">serverId</i> is a unique identifier. <i translate="no">authEndpoint</i> is the authentication endpoint. <i translate="no">tokenEndpoint</i> is the URL for token exchange. <i translate="no">chatEndpoint</i> is the URL for WebSocket connection. <i translate="no">healthUrl</i> is the endpoint for authentication service health checks.</p>
+<!-- @@@DiscoveryPayload -->
+<!-- $$$setAuthEndpoint -->
+<h3 class="fn" translate="no" id="setAuthEndpoint"><span class="type">void</span> DiscoveryPayload::<span class="name">setAuthEndpoint</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>endpoint</i>)</h3>
+<p>Sets the authentication <i translate="no">endpoint</i>.</p>
+<p><i translate="no">endpoint</i> is the authentication new URL to set.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="discoverypayload.html#authEndpoint-prop" translate="no">authEndpoint</a>. </p>
+</div><p><b>See also </b><a href="discoverypayload.html#authEndpoint-prop" translate="no">authEndpoint</a>().</p>
+<!-- @@@setAuthEndpoint -->
+<!-- $$$setChatEndpoint -->
+<h3 class="fn" translate="no" id="setChatEndpoint"><span class="type">void</span> DiscoveryPayload::<span class="name">setChatEndpoint</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>endpoint</i>)</h3>
+<p>Sets the new WebSocket chat <i translate="no">endpoint</i>.</p>
+<p><i translate="no">endpoint</i> is the new URL to set.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="discoverypayload.html#chatEndpoint-prop" translate="no">chatEndpoint</a>. </p>
+</div><p><b>See also </b><a href="discoverypayload.html#chatEndpoint-prop" translate="no">chatEndpoint</a>().</p>
+<!-- @@@setChatEndpoint -->
+<!-- $$$setHealthUrl -->
+<h3 class="fn" translate="no" id="setHealthUrl"><span class="type">void</span> DiscoveryPayload::<span class="name">setHealthUrl</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>url</i>)</h3>
+<p>Sets the health check URL.</p>
+<p><i translate="no">url</i> is the new URL to set.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="discoverypayload.html#healthUrl-prop" translate="no">healthUrl</a>. </p>
+</div><p><b>See also </b><a href="discoverypayload.html#healthUrl-prop" translate="no">healthUrl</a>().</p>
+<!-- @@@setHealthUrl -->
+<!-- $$$setServerId -->
+<h3 class="fn" translate="no" id="setServerId"><span class="type">void</span> DiscoveryPayload::<span class="name">setServerId</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>serverId</i>)</h3>
+<p>Sets the server's unique identifier.</p>
+<p><i translate="no">serverId</i> is the new ID to assign.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="discoverypayload.html#serverId-prop" translate="no">serverId</a>. </p>
+</div><p><b>See also </b><a href="discoverypayload.html#serverId-prop" translate="no">serverId</a>().</p>
+<!-- @@@setServerId -->
+<!-- $$$setServerName -->
+<h3 class="fn" translate="no" id="setServerName"><span class="type">void</span> DiscoveryPayload::<span class="name">setServerName</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>serverName</i>)</h3>
+<p>Sets the server display name.</p>
+<p><i translate="no">serverName</i> is the new name to set.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="discoverypayload.html#serverName-prop" translate="no">serverName</a>. </p>
+</div><p><b>See also </b><a href="discoverypayload.html#serverName-prop" translate="no">serverName</a>().</p>
+<!-- @@@setServerName -->
+<!-- $$$setTokenEndpoint -->
+<h3 class="fn" translate="no" id="setTokenEndpoint"><span class="type">void</span> DiscoveryPayload::<span class="name">setTokenEndpoint</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>endpoint</i>)</h3>
+<p>Sets the token <i translate="no">endpoint</i> URL.</p>
+<p><i translate="no">endpoint</i> is the new URL to set.</p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="discoverypayload.html#tokenEndpoint-prop" translate="no">tokenEndpoint</a>. </p>
+</div><p><b>See also </b><a href="discoverypayload.html#tokenEndpoint-prop" translate="no">tokenEndpoint</a>().</p>
+<!-- @@@setTokenEndpoint -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

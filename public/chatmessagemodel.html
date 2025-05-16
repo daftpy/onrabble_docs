@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- chatmessagemodel.cpp -->
+  <meta name="description" content="Exposes a list of chat messages in a given channel.">
+  <title>ChatMessageModel Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>ChatMessageModel</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-public-functions">Reimplemented Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#overview">Overview</a></li>
+<li class="level3"><a href="#internal-members">Internal Members</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">ChatMessageModel Class</h1>
+<!-- $$$ChatMessageModel-brief -->
+<p>Exposes a list of chat messages in a given channel. <a href="#details">More...</a></p>
+<!-- @@@ChatMessageModel -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;ChatMessageModel&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="https://doc.qt.io/qt/qabstractlistmodel.html" translate="no">QAbstractListModel</a></td></tr>
+</table></div>
+<ul>
+<li><a href="chatmessagemodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="chatmessagemodel.html#ChatMessageModel" translate="no">ChatMessageModel</a></b>(QObject *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="chatmessagemodel.html#appendMessage" translate="no">appendMessage</a></b>(const ChatMessagePayload &amp;<i>msg</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="chatmessagemodel.html#clear" translate="no">clear</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QList&lt;ChatMessagePayload&gt; &amp;</td><td class="memItemRight bottomAlign"><b><a href="chatmessagemodel.html#messages" translate="no">messages</a></b>() const</td></tr>
+</table></div>
+<h2 id="reimplemented-public-functions">Reimplemented Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVariant </td><td class="memItemRight bottomAlign"><b><a href="chatmessagemodel.html#data" translate="no">data</a></b>(const QModelIndex &amp;<i>index</i>, int <i>role</i> = Qt::DisplayRole) const override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QHash&lt;int, QByteArray&gt; </td><td class="memItemRight bottomAlign"><b><a href="chatmessagemodel.html#roleNames" translate="no">roleNames</a></b>() const override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual int </td><td class="memItemRight bottomAlign"><b><a href="chatmessagemodel.html#rowCount" translate="no">rowCount</a></b>(const QModelIndex &amp;<i>parent</i> = QModelIndex()) const override</td></tr>
+</table></div>
+<!-- $$$ChatMessageModel-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<h3 id="overview">Overview</h3>
+<p>ChatMessageModel is a <a href="https://doc.qt.io/qt/qabstractlistmodel.html" translate="no">QAbstractListModel</a> that holds a collection of <a href="chatmessagepayload.html" translate="no">ChatMessagePayload</a> objects. It provides role-based access to properties like message ID, sender, channel, and authored time. This model is typically used in combination with <a href="channelmessageproxymodel.html" translate="no">ChannelMessageProxyModel</a> to display only messages relevant to a specific channel.</p>
+<p>Messages can be appended from either C++ or QML, and the model supports full clearing and retrieval of the raw backing list.</p>
+<div class="internal"><h4 id="internal-members">Internal Members</h4>
+<p><b>Private</b> <b>Variables</b></p>
+<ul>
+<li><code translate="no">m_messages (QList&lt;ChatMessagePayload&gt;)</code> &ndash; Internal list of all messages stored in reverse-chronological order.</li>
+</ul>
+</div></div>
+<p><b>See also </b><a href="channelmessageproxymodel.html" translate="no">ChannelMessageProxyModel</a> and <a href="chatmessagepayload.html" translate="no">ChatMessagePayload</a>.</p>
+<!-- @@@ChatMessageModel -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ChatMessageModel[overload1]$$$ChatMessageModelQObject* -->
+<h3 class="fn" translate="no" id="ChatMessageModel"><code class="details extra" translate="no">[explicit]</code> ChatMessageModel::<span class="name">ChatMessageModel</span>(<span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs an empty ChatMessageModel instance.</p>
+<p><i translate="no">parent</i> is the optional <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> parent.</p>
+<!-- @@@ChatMessageModel -->
+<!-- $$$appendMessage[overload1]$$$appendMessageconstChatMessagePayload& -->
+<h3 class="fn" translate="no" id="appendMessage"><code class="details extra" translate="no">[invokable]</code> <span class="type">void</span> ChatMessageModel::<span class="name">appendMessage</span>(const <span class="type"><a href="chatmessagepayload.html" translate="no">ChatMessagePayload</a></span> &amp;<i>msg</i>)</h3>
+<p>Appends a new chat message <i translate="no">msg</i> to the top of the model.</p>
+<p>This inserts the message in reverse-chronological order (most recent first).</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@appendMessage -->
+<!-- $$$clear[overload1]$$$clear -->
+<h3 class="fn" translate="no" id="clear"><span class="type">void</span> ChatMessageModel::<span class="name">clear</span>()</h3>
+<p>Removes all messages from the model.</p>
+<p>This is typically used during disconnection or channel switching.</p>
+<!-- @@@clear -->
+<!-- $$$data[overload1]$$$dataconstQModelIndex&int -->
+<h3 class="fn" translate="no" id="data"><code class="details extra" translate="no">[override virtual]</code> <span class="type"><a href="https://doc.qt.io/qt/qvariant.html" translate="no">QVariant</a></span> ChatMessageModel::<span class="name">data</span>(const <span class="type"><a href="https://doc.qt.io/qt/qmodelindex.html" translate="no">QModelIndex</a></span> &amp;<i>index</i>, <span class="type">int</span> <i>role</i> = Qt::DisplayRole) const</h3>
+<p>Reimplements: <a href="https://doc.qt.io/qt/qabstractitemmodel.html#data" translate="no">QAbstractItemModel::data</a>(const QModelIndex &amp;index, int role) const.</p>
+<p>Returns the data for the message at <i translate="no">index</i> for a given <i translate="no">role</i>.</p>
+<p>This includes properties such as ID, username, channel name, and message body. Returns an invalid <a href="https://doc.qt.io/qt/qvariant.html" translate="no">QVariant</a> if the index is out of range.</p>
+<!-- @@@data -->
+<!-- $$$messages[overload1]$$$messages -->
+<h3 class="fn" translate="no" id="messages">const <span class="type"><a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a></span>&lt;<span class="type"><a href="chatmessagepayload.html" translate="no">ChatMessagePayload</a></span>&gt; &amp;ChatMessageModel::<span class="name">messages</span>() const</h3>
+<p>Returns a const reference to the internal message list.</p>
+<p>This allows controller classes to inspect or iterate over the full model contents.</p>
+<!-- @@@messages -->
+<!-- $$$roleNames[overload1]$$$roleNames -->
+<h3 class="fn" translate="no" id="roleNames"><code class="details extra" translate="no">[override virtual]</code> <span class="type"><a href="https://doc.qt.io/qt/qhash.html" translate="no">QHash</a></span>&lt;<span class="type">int</span>, <span class="type"><a href="https://doc.qt.io/qt/qbytearray.html" translate="no">QByteArray</a></span>&gt; ChatMessageModel::<span class="name">roleNames</span>() const</h3>
+<p>Reimplements: <a href="https://doc.qt.io/qt/qabstractitemmodel.html#roleNames" translate="no">QAbstractItemModel::roleNames</a>() const.</p>
+<p>Returns a mapping from role values to their corresponding QML role names.</p>
+<p>This is used by QML delegates to access message properties directly in views.</p>
+<!-- @@@roleNames -->
+<!-- $$$rowCount[overload1]$$$rowCountconstQModelIndex& -->
+<h3 class="fn" translate="no" id="rowCount"><code class="details extra" translate="no">[override virtual]</code> <span class="type">int</span> ChatMessageModel::<span class="name">rowCount</span>(const <span class="type"><a href="https://doc.qt.io/qt/qmodelindex.html" translate="no">QModelIndex</a></span> &amp;<i>parent</i> = QModelIndex()) const</h3>
+<p>Reimplements: <a href="https://doc.qt.io/qt/qabstractitemmodel.html#rowCount" translate="no">QAbstractItemModel::rowCount</a>(const QModelIndex &amp;parent) const.</p>
+<p>Returns the number of messages in the model.</p>
+<p>This is used by QML views to determine how many items to render. <i translate="no">parent</i> is unused for flat list models.</p>
+<!-- @@@rowCount -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- connectionflow.qdoc -->
+  <title>Connection Flow | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+  <link rel="prev" href="authenticationflow.html" />
+  <link rel="next" href="messageflow.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="authenticationflow.html">Authentication Flow</a>
+<a class="nextPage" href="messageflow.html">Message Flow</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level1"><a href="#flow-summary">Flow Summary</a></li>
+<li class="level1"><a href="#components-involved">Components Involved</a></li>
+<li class="level1"><a href="#design-note">Design Note</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Connection Flow</h1>
+<!-- $$$connectionflow.html-description -->
+<div class="descr" id="details">
+<h2 id="overview">Overview</h2>
+<p>The connection flow is responsible for establishing and managing a persistent WebSocket connection to a discovered chat server. Once authentication completes and an access token has been obtained, the application constructs a <a href="clientmanager.html" translate="no">ClientManager</a>, which coordinates connection initiation, message routing, and model setup.</p>
+<p>This flow is triggered automatically by each chat window (or tab) that is opened by the user. Each chat window maintains its own <a href="clientmanager.html" translate="no">ClientManager</a> instance, which encapsulates the connection and user-specific state for that context.</p>
+<h2 id="flow-summary">Flow Summary</h2>
+<ul>
+<li>After authentication, the application creates a <a href="clientmanager.html" translate="no">ClientManager</a> for the active chat window</li>
+<li>The <a href="clientmanager.html" translate="no">ClientManager</a> is passed a <a href="discoverypayload.html" translate="no">DiscoveryPayload</a> and access token</li>
+<li>The application calls <code translate="no">connectToServer()</code> to initiate the WebSocket handshake</li>
+<li>Internally, the WebsocketManager connects using the chat endpoint and token</li>
+<li>Upon successful connection, the <code translate="no">connected</code> signal is emitted</li>
+<li>Channel metadata is received from the server</li>
+<li>Proxies are populated and the UI is notified via <code translate="no">activeChannelsReady</code></li>
+</ul>
+<h2 id="components-involved">Components Involved</h2>
+<ul>
+<li><a href="clientmanager.html" translate="no">ClientManager</a></li>
+<li><a href="discoverypayload.html" translate="no">DiscoveryPayload</a></li>
+<li>access token (retrieved from the <a href="authenticationflow.html">Authentication Flow</a>)</li>
+</ul>
+<h2 id="design-note">Design Note</h2>
+<p>Each active chat window in the application owns a dedicated instance of <a href="clientmanager.html" translate="no">ClientManager</a>. This allows isolated connection handling per window or tab and ensures that each session can maintain its own filtered views, JWT identity, and connection lifecycle independently.</p>
+</div>
+<p><b>See also </b><a href="authenticationflow.html">authenticationflow.html</a>, <a href="discoveryflow.html">discoveryflow.html</a>, and <a href="clientmanager.html" translate="no">ClientManager</a>.</p>
+<!-- @@@connectionflow.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="authenticationflow.html">Authentication Flow</a>
+<a class="nextPage" href="messageflow.html">Message Flow</a>
+</p>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

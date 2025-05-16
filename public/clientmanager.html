@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- clientmanager.cpp -->
+  <meta name="description" content="Manages client-side connection, session state, and proxy model wiring.">
+  <title>ClientManager Class | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+<li>ClientManager</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#overview">Overview</a></li>
+<li class="level3"><a href="#internal-members">Internal Members</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">ClientManager Class</h1>
+<!-- $$$ClientManager-brief -->
+<p>Manages client-side connection, session state, and proxy model wiring. <a href="#details">More...</a></p>
+<!-- @@@ClientManager -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;ClientManager&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a></td></tr>
+</table></div>
+<ul>
+<li><a href="clientmanager-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary" translate="no">
+<tr><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="clientmanager.html#broker-prop" translate="no">broker</a></b> : QObject* const</li>
+<li class="fn" translate="no"><b><a href="clientmanager.html#channelModel-prop" translate="no">channelModel</a></b> : QObject* const</li>
+<li class="fn" translate="no"><b><a href="clientmanager.html#channelProxyList-prop" translate="no">channelProxyList</a></b> : QList&lt;ChannelMessageProxyModel*&gt; const</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="clientmanager.html#privateMessageProxyList-prop" translate="no">privateMessageProxyList</a></b> : QList&lt;PrivateMessageProxyModel*&gt; const</li>
+<li class="fn" translate="no"><b><a href="clientmanager.html#user-prop" translate="no">user</a></b> : const ClientUserPayload</li>
+</ul>
+</td></tr>
+</table></div>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#ClientManager" translate="no">ClientManager</a></b>(QObject *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#ClientManager-1" translate="no">ClientManager</a></b>(const DiscoveryPayload &amp;<i>payload</i>, const QString &amp;<i>token</i>, QObject *<i>parent</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QObject *</td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#broker-prop" translate="no">broker</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QObject *</td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#channelModel-prop" translate="no">channelModel</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;ChannelMessageProxyModel *&gt; </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#channelProxyList-prop" translate="no">channelProxyList</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#connectToServer" translate="no">connectToServer</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;PrivateMessageProxyModel *&gt; </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#privateMessageProxyList-prop" translate="no">privateMessageProxyList</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QObject *</td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#proxyForChannel" translate="no">proxyForChannel</a></b>(const QString &amp;<i>channelName</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QObject *</td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#proxyForPrivateUser" translate="no">proxyForPrivateUser</a></b>(const QString &amp;<i>userId</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#setAccessToken" translate="no">setAccessToken</a></b>(const QString &amp;<i>token</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#setDiscoveryPayload" translate="no">setDiscoveryPayload</a></b>(const DiscoveryPayload &amp;<i>payload</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ClientUserPayload </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#user-prop" translate="no">user</a></b>()</td></tr>
+</table></div>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#channelProxyList-prop" translate="no">activeChannelsReady</a></b>(const QList&lt;ChannelMessageProxyModel *&gt; &amp;<i>proxies</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#activeChannelsReceived" translate="no">activeChannelsReceived</a></b>(const QList&lt;ChannelPayload&gt; &amp;<i>channels</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#connected" translate="no">connected</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#connectionError" translate="no">connectionError</a></b>(const QString &amp;<i>message</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#disconnected" translate="no">disconnected</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="clientmanager.html#privateMessageProxyListChanged" translate="no">privateMessageProxyListChanged</a></b>(const QList&lt;PrivateMessageProxyModel *&gt; &amp;<i>proxies</i>)</td></tr>
+</table></div>
+<!-- $$$ClientManager-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<h3 id="overview">Overview</h3>
+<p>ClientManager sets up the WebSocket connection, manages user identity via JWT, routes messages through the <a href="messagebroker.html" translate="no">MessageBroker</a>, and provides access to chat models and filtered proxies for QML.</p>
+<div class="internal"><h4 id="internal-members">Internal Members</h4>
+<p>The following private member variables and utility functions are used internally by ClientManager and are referenced here for developer clarity. Full documentation is available in the source file:</p>
+<p><b>Private</b> <b>Variables</b></p>
+<ul>
+<li><code translate="no">m_websocketManager (WebsocketManager)</code> &ndash; Maintains the active WebSocket connection and emits raw messages.</li>
+<li><code translate="no">m_messageBroker (<a href="messagebroker.html" translate="no">MessageBroker</a>)</code> &ndash; Parses and dispatches incoming/outgoing structured chat messages.</li>
+<li><code translate="no">m_user (<a href="clientuserpayload.html" translate="no">ClientUserPayload</a>)</code> &ndash; Holds decoded user information from the JWT token.</li>
+<li><code translate="no">m_accessToken (<a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a>)</code> &ndash; The current JWT access token for this session.</li>
+<li><code translate="no">m_payload (<a href="discoverypayload.html" translate="no">DiscoveryPayload</a>)</code> &ndash; Connection metadata such as server URLs.</li>
+<li><code translate="no">m_channelProxies (<a href="https://doc.qt.io/qt/qhash.html#qhash" translate="no">QHash</a>&lt;<a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a>, ChannelProxyModel*&gt;)</code> &ndash; Proxies for filtering public chat messages by channel.</li>
+<li><code translate="no">m_privateChatProxies (<a href="https://doc.qt.io/qt/qhash.html#qhash" translate="no">QHash</a>&lt;<a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a>, <a href="privatemessageproxymodel.html" translate="no">PrivateMessageProxyModel</a>*&gt;)</code> &ndash; Proxies for filtering private messages by user.</li>
+<li><code translate="no">m_channelModel (<a href="channelmodel.html" translate="no">ChannelModel</a>)</code> &ndash; Maintains the list of all known channels.</li>
+</ul>
+<p><b>Internal</b> <b>Functions</b></p>
+<ul>
+<li><code translate="no">parseJwtClaims(<a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a>)</code> &ndash; Parses a JWT token and returns its claims as a <a href="https://doc.qt.io/qt/qvariant.html#QVariantMap-typedef" translate="no">QVariantMap</a>.</li>
+<li><code translate="no">logJwtClaims(<a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a>)</code> &ndash; Logs the contents of a JWT to the debug console.</li>
+<li><code translate="no">handleActiveChannels(<a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a>&lt;<a href="channelpayload.html" translate="no">ChannelPayload</a>&gt;)</code> &ndash; Initializes proxies and populates the channel model from server data.</li>
+</ul>
+</div></div>
+<!-- @@@ClientManager -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$broker-prop$$$broker -->
+<h3 class="fn" translate="no" id="broker-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">broker</span> : <span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span>* const</h3>
+<p>Returns the internal <a href="messagebroker.html" translate="no">MessageBroker</a> responsible for routing and parsing messages.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QObject *</td><td class="memItemRight bottomAlign"><span class="name"><b>broker</b></span>()</td></tr>
+</table></div>
+<!-- @@@broker -->
+<!-- $$$channelModel-prop$$$channelModel -->
+<h3 class="fn" translate="no" id="channelModel-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">channelModel</span> : <span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span>* const</h3>
+<p>Returns the <a href="channelmodel.html" translate="no">ChannelModel</a> instance representing all known channels.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QObject *</td><td class="memItemRight bottomAlign"><span class="name"><b>channelModel</b></span>()</td></tr>
+</table></div>
+<!-- @@@channelModel -->
+<!-- $$$channelProxyList-prop$$$channelProxyList$$$activeChannelsReadyconstQList<ChannelMessageProxyModel*>& -->
+<h3 class="fn" translate="no" id="channelProxyList-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">channelProxyList</span> : <span class="type"><a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a></span>&lt;<span class="type"><a href="channelmessageproxymodel.html" translate="no">ChannelMessageProxyModel</a></span>*&gt; const</h3>
+<p>Returns a locale-aware sorted list of all available channel proxies.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QList&lt;ChannelMessageProxyModel *&gt; </td><td class="memItemRight bottomAlign"><span class="name"><b>channelProxyList</b></span>() const</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>activeChannelsReady</b></span>(const QList&lt;ChannelMessageProxyModel *&gt; &amp;<i>proxies</i>)</td></tr>
+</table></div>
+<!-- @@@channelProxyList -->
+<!-- $$$privateMessageProxyList-prop$$$privateMessageProxyList$$$privateMessageProxyListChangedconstQList<PrivateMessageProxyModel*>& -->
+<h3 class="fn" translate="no" id="privateMessageProxyList-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">privateMessageProxyList</span> : <span class="type"><a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a></span>&lt;<span class="type"><a href="privatemessageproxymodel.html" translate="no">PrivateMessageProxyModel</a></span>*&gt; const</h3>
+<p>Returns all private chat proxies that have been created.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QList&lt;PrivateMessageProxyModel *&gt; </td><td class="memItemRight bottomAlign"><span class="name"><b>privateMessageProxyList</b></span>() const</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="clientmanager.html#privateMessageProxyListChanged" translate="no">privateMessageProxyListChanged</a></b></span>(const QList&lt;PrivateMessageProxyModel *&gt; &amp;<i>proxies</i>)</td></tr>
+</table></div>
+<!-- @@@privateMessageProxyList -->
+<!-- $$$user-prop$$$user -->
+<h3 class="fn" translate="no" id="user-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">user</span> : const <span class="type"><a href="clientuserpayload.html" translate="no">ClientUserPayload</a></span></h3>
+<p>Returns parsed user information extracted from the access token.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> ClientUserPayload </td><td class="memItemRight bottomAlign"><span class="name"><b>user</b></span>()</td></tr>
+</table></div>
+<!-- @@@user -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ClientManager[overload1]$$$ClientManagerQObject* -->
+<h3 class="fn" translate="no" id="ClientManager"><code class="details extra" translate="no">[explicit]</code> ClientManager::<span class="name">ClientManager</span>(<span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs a ClientManager instance with no token or payload.</p>
+<p>This is the default constructor for QML and requires <code translate="no">setDiscoveryPayload(payload)</code> and <code translate="no">setAccessToken(token)</code> to be called before <code translate="no">connectToServer()</code>.</p>
+<p><i translate="no">parent</i> is the optional parent object.</p>
+<!-- @@@ClientManager -->
+<!-- $$$ClientManager$$$ClientManagerconstDiscoveryPayload&constQString&QObject* -->
+<h3 class="fn" translate="no" id="ClientManager-1">ClientManager::<span class="name">ClientManager</span>(const <span class="type"><a href="discoverypayload.html" translate="no">DiscoveryPayload</a></span> &amp;<i>payload</i>, const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>token</i>, <span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i>)</h3>
+<p>Constructs a ClientManager with an access token and discovery payload.</p>
+<p><i translate="no">payload</i> is used to configure connection endpoints. <i translate="no">token</i> is a JWT used to derive the current user identity. <i translate="no">parent</i> is the optional <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> parent.</p>
+<!-- @@@ClientManager -->
+<!-- $$$activeChannelsReceived[overload1]$$$activeChannelsReceivedconstQList<ChannelPayload>& -->
+<h3 class="fn" translate="no" id="activeChannelsReceived"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> ClientManager::<span class="name">activeChannelsReceived</span>(const <span class="type"><a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a></span>&lt;<span class="type"><a href="channelpayload.html" translate="no">ChannelPayload</a></span>&gt; &amp;<i>channels</i>)</h3>
+<p>This signal is emitted when the list of active channels is received from the server.</p>
+<p>The <i translate="no">channels</i> list contains metadata about each available channel. This data is used to populate models and proxies in the chat UI.</p>
+<!-- @@@activeChannelsReceived -->
+<!-- $$$connectToServer[overload1]$$$connectToServer -->
+<h3 class="fn" translate="no" id="connectToServer"><code class="details extra" translate="no">[invokable]</code> <span class="type">void</span> ClientManager::<span class="name">connectToServer</span>()</h3>
+<p>Connects to the WebSocket server using the current discovery payload and access token.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@connectToServer -->
+<!-- $$$connected[overload1]$$$connected -->
+<h3 class="fn" translate="no" id="connected"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> ClientManager::<span class="name">connected</span>()</h3>
+<p>This signal is emitted when a connection to the chat server is successfully established.</p>
+<p>This indicates that the WebSocket handshake and authentication flow completed successfully.</p>
+<!-- @@@connected -->
+<!-- $$$connectionError[overload1]$$$connectionErrorconstQString& -->
+<h3 class="fn" translate="no" id="connectionError"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> ClientManager::<span class="name">connectionError</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>message</i>)</h3>
+<p>This signal is emitted when an error occurs during connection.</p>
+<p><i translate="no">message</i> contains the error description, suitable for display in the UI.</p>
+<!-- @@@connectionError -->
+<!-- $$$disconnected[overload1]$$$disconnected -->
+<h3 class="fn" translate="no" id="disconnected"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> ClientManager::<span class="name">disconnected</span>()</h3>
+<p>This signal is emitted when the chat server connection is closed.</p>
+<p>This could be due to a user action, a dropped network connection, or a server-initiated disconnect.</p>
+<!-- @@@disconnected -->
+<!-- $$$privateMessageProxyListChanged -->
+<h3 class="fn" translate="no" id="privateMessageProxyListChanged"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> ClientManager::<span class="name">privateMessageProxyListChanged</span>(const <span class="type"><a href="https://doc.qt.io/qt/qlist.html" translate="no">QList</a></span>&lt;<span class="type"><a href="privatemessageproxymodel.html" translate="no">PrivateMessageProxyModel</a></span> *&gt; &amp;<i>proxies</i>)</h3>
+<p>This signal is emitted when the list of private chat proxies changes.</p>
+<p>This occurs when a new proxy for a private conversation is created. <i translate="no">proxies</i> is the full updated list of proxies.</p>
+<div class="admonition note"><p><b>Note: </b>Notifier signal for property <a href="clientmanager.html#privateMessageProxyList-prop" translate="no">privateMessageProxyList</a>. </p>
+</div><!-- @@@privateMessageProxyListChanged -->
+<!-- $$$proxyForChannel[overload1]$$$proxyForChannelconstQString& -->
+<h3 class="fn" translate="no" id="proxyForChannel"><code class="details extra" translate="no">[invokable]</code> <span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *ClientManager::<span class="name">proxyForChannel</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>channelName</i>) const</h3>
+<p>Returns a proxy model that filters chat messages by public channel.</p>
+<p>The proxy filters the global chat message model to only include messages associated with the given <i translate="no">channelName</i>.</p>
+<p>Returns <code translate="no">nullptr</code> if no proxy has been created yet for the channel.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@proxyForChannel -->
+<!-- $$$proxyForPrivateUser[overload1]$$$proxyForPrivateUserconstQString& -->
+<h3 class="fn" translate="no" id="proxyForPrivateUser"><code class="details extra" translate="no">[invokable]</code> <span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *ClientManager::<span class="name">proxyForPrivateUser</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>userId</i>)</h3>
+<p>Returns a proxy model that filters private chat messages exchanged with a specific user.</p>
+<p>The proxy filters the full private chat message model to only include messages between the current user and the specified <i translate="no">userId</i>. If a proxy does not already exist, it is created and configured automatically.</p>
+<p>Returns a pointer to the proxy model for the given user.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@proxyForPrivateUser -->
+<!-- $$$setAccessToken[overload1]$$$setAccessTokenconstQString& -->
+<h3 class="fn" translate="no" id="setAccessToken"><code class="details extra" translate="no">[invokable]</code> <span class="type">void</span> ClientManager::<span class="name">setAccessToken</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>token</i>)</h3>
+<p>Updates the internal access token and logs decoded claims.</p>
+<p><i translate="no">token</i> is the new JWT to use for authentication and user identification.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@setAccessToken -->
+<!-- $$$setDiscoveryPayload[overload1]$$$setDiscoveryPayloadconstDiscoveryPayload& -->
+<h3 class="fn" translate="no" id="setDiscoveryPayload"><code class="details extra" translate="no">[invokable]</code> <span class="type">void</span> ClientManager::<span class="name">setDiscoveryPayload</span>(const <span class="type"><a href="discoverypayload.html" translate="no">DiscoveryPayload</a></span> &amp;<i>payload</i>)</h3>
+<p>Updates the internal discovery configuration.</p>
+<p><i translate="no">payload</i> provides updated server endpoint information.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@setDiscoveryPayload -->
+</div>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- messageflow.qdoc -->
+  <title>Message Flow | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+  <link rel="prev" href="connectionflow.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="connectionflow.html">Connection Flow</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level1"><a href="#lifecycle-and-wiring">Lifecycle and Wiring</a></li>
+<li class="level1"><a href="#design-notes">Design Notes</a></li>
+<li class="level1"><a href="#related-pages">Related Pages</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Message Flow</h1>
+<!-- $$$messageflow.html-description -->
+<div class="descr" id="details">
+<h2 id="overview">Overview</h2>
+<p>Once the WebSocket connection is established by <a href="clientmanager.html" translate="no">ClientManager</a>, message exchange and routing is handled by an internal pipeline composed of:</p>
+<ul>
+<li>WebsocketManager &mdash; Maintains a persistent WebSocket connection</li>
+<li><a href="messagebroker.html" translate="no">MessageBroker</a> &mdash; Parses JSON messages and emits typed signals or model updates</li>
+<li><a href="chatmessagemodel.html" translate="no">ChatMessageModel</a> and <a href="privatemessagemodel.html" translate="no">PrivateMessageModel</a> &mdash; Store parsed public and private messages</li>
+<li><a href="channelmessageproxymodel.html" translate="no">ChannelMessageProxyModel</a> and <a href="privatemessageproxymodel.html" translate="no">PrivateMessageProxyModel</a> &mdash; Expose filtered views to QML</li>
+</ul>
+<p>These components are automatically connected inside <a href="clientmanager.html" translate="no">ClientManager</a> when it is constructed or when <code translate="no">connectToServer()</code> is called.</p>
+<h2 id="lifecycle-and-wiring">Lifecycle and Wiring</h2>
+<p>Internally, when a <a href="clientmanager.html" translate="no">ClientManager</a> instance is created:</p>
+<ul>
+<li>WebsocketManager is initialized and connected to the following signals:<ul>
+<li><code translate="no">connected</code>, <code translate="no">disconnected</code>, <code translate="no">connectionError</code></li>
+<li><code translate="no">textMessageReceived</code> → <a href="messagebroker.html#processMessage" translate="no">MessageBroker::processMessage</a>()</li>
+</ul>
+</li>
+<li><a href="messagebroker.html" translate="no">MessageBroker</a> parses incoming JSON messages. Depending on the payload type, it appends to one of its two internal models:<ul>
+<li><a href="chatmessagemodel.html" translate="no">ChatMessageModel</a> &mdash; for public channel messages</li>
+<li><a href="privatemessagemodel.html" translate="no">PrivateMessageModel</a> &mdash; for direct/private messages</li>
+</ul>
+</li>
+<li><a href="clientmanager.html" translate="no">ClientManager</a> exposes filtered proxy models:<ul>
+<li>Each channel has its own <a href="channelmessageproxymodel.html" translate="no">ChannelMessageProxyModel</a>, created from the full message model</li>
+<li>Each private conversation has its own <a href="privatemessageproxymodel.html" translate="no">PrivateMessageProxyModel</a>, created from the private model</li>
+</ul>
+</li>
+</ul>
+<p>These proxies can be retrieved using:</p>
+<pre class="cpp" translate="no">chatClientManager<span class="operator">.</span>proxyForChannel(<span class="string">&quot;general&quot;</span>);
+chatClientManager<span class="operator">.</span>proxyForPrivateUser(<span class="string">&quot;user-id-1234&quot;</span>);</pre>
+<h2 id="design-notes">Design Notes</h2>
+<p>- Models are populated only by the <a href="messagebroker.html" translate="no">MessageBroker</a>, based on server input.</p>
+<p>- Proxies are created on-demand by <a href="clientmanager.html" translate="no">ClientManager</a> and cached internally.</p>
+<p>- Each active chat window owns its own <a href="clientmanager.html" translate="no">ClientManager</a>, ensuring isolated message routing.</p>
+<h2 id="related-pages">Related Pages</h2>
+<ul>
+<li><a href="connectionflow.html">connectionflow.html</a> &mdash; Connection setup and token usage</li>
+<li><a href="clientmanager.html" translate="no">ClientManager</a> &mdash; Central controller for chat state and proxies</li>
+<li><a href="messagebroker.html" translate="no">MessageBroker</a> &mdash; JSON routing logic</li>
+<li><a href="channelmessageproxymodel.html" translate="no">ChannelMessageProxyModel</a>, <a href="privatemessageproxymodel.html" translate="no">PrivateMessageProxyModel</a></li>
+</ul>
+</div>
+<!-- @@@messageflow.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="connectionflow.html">Connection Flow</a>
+</p>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>

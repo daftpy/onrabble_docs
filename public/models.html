@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- models.qdoc -->
+  <title>Data Models | OnRabbleClient</title>
+ <link rel="stylesheet" type="text/css" href="style/styles.css" />
+   <link rel="stylesheet" type="text/css" href="style/base.css" />
+  <script type="text/javascript" src="style/main.js"></script>
+ </head>
+<body>
+<div id="Container"><div id="IncludedNavbar"></div><div id="BodyContainer">
+ <div id="IncludedSidebar"></div>
+ <div id="ContentContainer"><div id="Content">
+  <link rel="prev" href="payloads.html" />
+  <link rel="next" href="qmlpages.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="payloads.html">Payload Types</a>
+<a class="nextPage" href="qmlpages.html">QML Types</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level2"><a href="#list-models">List Models</a></li>
+<li class="level2"><a href="#proxy-models">Proxy Models</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Data Models</h1>
+<!-- $$$models.html-description -->
+<div class="descr" id="details">
+<h2 id="overview">Overview</h2>
+<p>This page documents the models used in OnRabbleClient to represent and organize chat-related data. All models inherit from either <a href="https://doc.qt.io/qt/qabstractlistmodel.html" translate="no">QAbstractListModel</a> or <a href="https://doc.qt.io/qt/qsortfilterproxymodel.html" translate="no">QSortFilterProxyModel</a> and are designed to integrate directly with QML view components such as <code translate="no">ListView</code>.</p>
+<p>Qt’s model/view system is conceptually similar to MVC, but in this context, models do not encapsulate domain logic. Instead, they expose read/write access to structured collections of data for consumption by the UI. Filtering and sorting are handled separately through proxy models.</p>
+<div class="admonition note">
+<p><b>Note: </b>While “model” in Qt refers to a view-bound data interface, it is not equivalent to a domain-level model in MVC or MVVM. Validation, persistence, and business logic are handled outside this model layer.</p>
+</div>
+<h3 id="list-models">List Models</h3>
+<p>These models inherit from <a href="https://doc.qt.io/qt/qabstractlistmodel.html" translate="no">QAbstractListModel</a> and provide unfiltered, observable lists of payloads.</p>
+<ul>
+<li><a href="chatmessagemodel.html" translate="no">ChatMessageModel</a> &mdash; Holds all public messages received from the chat server.</li>
+<li><a href="privatemessagemodel.html" translate="no">PrivateMessageModel</a> &mdash; Holds all direct (private) messages exchanged between users.</li>
+<li><a href="channelmodel.html" translate="no">ChannelModel</a> &mdash; Holds metadata for available chat channels.</li>
+</ul>
+<h3 id="proxy-models">Proxy Models</h3>
+<p>These models inherit from <a href="https://doc.qt.io/qt/qsortfilterproxymodel.html" translate="no">QSortFilterProxyModel</a> and are used to create filtered views of base models.</p>
+<ul>
+<li><a href="channelmessageproxymodel.html" translate="no">ChannelMessageProxyModel</a> &mdash; Filters <a href="chatmessagemodel.html" translate="no">ChatMessageModel</a> by channel name.</li>
+<li><a href="privatemessageproxymodel.html" translate="no">PrivateMessageProxyModel</a> &mdash; Filters <a href="privatemessagemodel.html" translate="no">PrivateMessageModel</a> by sender/recipient pair.</li>
+</ul>
+</div>
+<!-- @@@models.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="payloads.html">Payload Types</a>
+<a class="nextPage" href="qmlpages.html">QML Types</a>
+</p>
+</div>
+</div>
+</div>
+<div id="Footer">Footer</div>
+</div>
+</body>
+</html>
