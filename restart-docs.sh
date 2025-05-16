@@ -2,16 +2,16 @@
 
 set -e  # Exit on any error
 
-# If chatserver is missing, fetch it from upstream using sparse-checkout
-if [ ! -d "chatserver" ]; then
-    echo "chatserver folder not found, setting up sparse checkout..."
+# Pull or update chatserver folder from upstream
+if [ ! -d ".git/modules/chatserver" ] && [ ! -d "chatserver" ]; then
+    echo "Cloning chatserver/ from upstream..."
     git remote add chatserver-upstream https://github.com/daftpy/OpenRabbleServer.git || true
-    git sparse-checkout init --cone || true
-    git sparse-checkout set chatserver
-    git pull chatserver-upstream main
+    git fetch chatserver-upstream
+    git checkout chatserver-upstream/main -- chatserver
 else
-    echo "🔄 Updating chatserver via sparse checkout..."
-    git pull chatserver-upstream main
+    echo "Updating chatserver from upstream..."
+    git fetch chatserver-upstream
+    git checkout chatserver-upstream/main -- chatserver
 fi
 
 echo "Building Astro site..."
